@@ -1,0 +1,44 @@
+<div class="block">
+<button (click)="openMenu(menu.USERS)">Users</button>
+<button (click)="openMenu(menu.BOOKS)">Books</button>
+<button (click)="openMenu(menu.BORROWINGS)">Borrowings</button>
+</div>
+<div class="block">
+<div *ngIf="actualMenu==menu.USERS"><br>
+  ID :<input [(ngModel)]="user.userId"><p></p>
+  Name :<input [(ngModel)]="user.userName"><p></p><p></p>
+  Contact : <input [(ngModel)]="user.contact" ><p></p>
+  <button type="submit" [disabled]="!user.userId || !user.userName || !user.contact" (click)="pridaj()">Add</button><br><br>
+  <p class="list">Zoznam:</p>
+  <div *ngFor="let u of users">
+    Id: <b>{{u.userId}}</b>&nbsp;&nbsp;Name: <b>{{u.userName}}</b>&nbsp;&nbsp;Contact: <b>{{u.contact}}</b>
+  </div>
+</div>
+</div>
+<div class="block">
+<div *ngIf="actualMenu==menu.BOOKS"><br>
+  ID :<input [(ngModel)]="book.bookId"><p></p>
+  Name :<input [(ngModel)]="book.bookName"><p></p>
+  Author : <input [(ngModel)]="book.author"><p></p>
+  Available :<input [(ngModel)]="book.available"><p></p>
+  <button type="submit" [disabled]="!book.bookName || !book.bookId || !book.author || !book.available" (click)="pridaj()">Add</button><br><br>
+  <p class="list">Zoznam:</p>
+  <div *ngFor="let b of books">
+    Id: <b>{{b.bookId}}</b>&nbsp;&nbsp;Name: <b>{{b.bookName}}</b>&nbsp;&nbsp;Author: <b>{{b.author}}</b>&nbsp;&nbsp;Available: <b>{{b.available}}</b>
+  </div>
+</div>
+</div>
+  <div class="block">
+<div *ngIf="actualMenu==menu.BORROWINGS"><br>
+  ID :<input [(ngModel)]="borrowing.borrowingId"><p></p>
+  Book :<input [(ngModel)]="borrowing.borrowingBook"><p></p>
+  User : <input [(ngModel)]="borrowing.borrowingUser"><p></p>
+  <button type="submit" [disabled]="!borrowing.borrowingId || !borrowing.borrowingBook || !borrowing.borrowingUser"(click)="pridaj()">Add</button><br><br>
+  <p class="list">Zoznam:</p>
+  <div *ngFor="let bw of borrowings">
+    Id: <b>{{bw.borrowingId}}</b>&nbsp;&nbsp;Name: <b>{{bw.borrowingBook}}</b>&nbsp;&nbsp;Author: <b>{{bw.borrowingUser}}</b>
+  </div>
+</div>
+</div>
+
+
