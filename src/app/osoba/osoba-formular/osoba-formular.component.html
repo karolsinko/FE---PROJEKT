@@ -3,27 +3,24 @@
   <section>
   <form [formGroup]="form">
 
-
+    <tr>
     <p>Meno:</p><th><input formControlName="meno" placeholder="Meno"></th>
-    <br>
     <p>Priezvisko:</p><th><input formControlName="priezvisko" placeholder="Priezvisko"></th>
-    <br>
+    </tr>
+    <tr>
     <p>Rok narodenia:</p><th><input formControlName="rok_nar" placeholder="Rok narodenia"></th>
-    <br>
-    <p>Rodné číslo:</p><th><input formControlName="rod_cislo" placeholder="Rodné číslp"></th>
-    <br>
+    <p>Rodné číslo:</p><th><input formControlName="rod_cislo" placeholder="Rodné číslo"></th>
+    </tr>
+    <tr>
     <p>Telefónne číslo:</p><th><input formControlName="tel_cislo" placeholder="Telefónne číslo"></th>
-    <br>
     <p>Bydlisko:</p><th><input formControlName="bydlisko" placeholder="Bydlisko"></th>
-    <br>
-    <p>pohlavie:</p><th><input formControlName="pohlavie" placeholder="Pohlavie"></th>
-    <br>
-
-      <th>
-        <button (click)="pridaj()" *ngIf="form.value.id === null">Pridaj</button><br>
-        <button (click)="uprav()" *ngIf="form.value.id !== null">Uprav</button>
-        <button (click)="zrus()">Vymaž</button>
-      </th>
+    </tr>
+    <tr>
+    <p>Pohlavie:</p><th><input formControlName="pohlavie" placeholder="Pohlavie"></th>
+      <th><button (click)="pridaj()" *ngIf="form.value.id === null">Pridaj</button>
+      <button (click)="uprav()" *ngIf="form.value.id !== null">Uprav</button>
+      <button (click)="zrus()">Vymaž</button></th>
+    </tr>
 
 
   </form>
