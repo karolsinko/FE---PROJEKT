@@ -1,0 +1,36 @@
+.block{
+  border: #FC5185 5px solid;
+  border-radius: 20px;
+  background-color: #3FC1C9;
+  padding: 10px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  color: antiquewhite;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+td{
+  border-bottom: #F5F5F5 1px solid;
+
+}
+th{
+  width: 150px;
+
+
+}
+button{
+  background-color: #FC5185;
+  height:20px;
+  width: 60px;
+  border-radius: 50px;
+  font-size:15px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,15 @@
+<div class="menu">
+  <h1>Evidencia osoby</h1>
+  <button (click)="chodSpat()">Späť</button>
+</div>
+
+  <app-osoba-formular [osoba]="osobaNaUpravu"
+                      (pridajOsobu)="pridaj($event)"
+                      (upravOsobu)="uprav($event)">
+  </app-osoba-formular>
+
+  <app-osoba-zoznam [osoby]="osoby"
+                    (upravOsobu)="upravZoZoznamu($event)"
+                    (vymazOsobu)="zmazZoZoznamu($event)">
+  </app-osoba-zoznam>
+
