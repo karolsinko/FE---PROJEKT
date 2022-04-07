@@ -1,0 +1,23 @@
+<section>
+<div class="wrapper">
+  <form [formGroup]="form">
+
+
+    <table class="table">
+      <td><p>Názov:</p></td>
+      <td><p>Počet dávok:</p></td>
+      <td><button (click)="uprav()" *ngIf="form.value.id !== null" >Uprav</button></td>
+      <tbody>
+
+      <td><input formControlName="nazov" placeholder="Nazov"></td>
+      <td><input formControlName="pocet_davok" placeholder="Počet dávok"></td>
+
+      <td><button (click)="pridaj()" *ngIf="form.value.id === null">Pridaj</button>
+      <button (click)="zrus()">Vymaž</button></td>
+
+      </tbody>
+    </table>
+
+  </form>
+</div>
+</section>

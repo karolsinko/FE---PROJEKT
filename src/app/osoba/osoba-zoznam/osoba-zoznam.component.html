@@ -1,0 +1,33 @@
+<div class="wrapper">
+<section>
+  <table class="table">
+    <thead>
+    <tr>
+      <td>Meno</td>
+      <td>Priezvisko</td>
+      <td>Rok narodenia</td>
+      <td>Rodné číslo</td>
+      <td>Telefónne číslo</td>
+      <td>Bydlisko</td>
+      <td>Pohlavie</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let o of osoby">
+      <td>{{ o.meno }}</td>
+      <td>{{ o.priezvisko }}</td>
+      <td>{{ o.rok_nar }}</td>
+      <td>{{ o.rod_cislo }}</td>
+      <td>{{ o.tel_cislo }}</td>
+      <td>{{ o.bydlisko }}</td>
+      <td>{{ o.pohlavie }}</td>
+      <td>
+        <button (click)="uprav(o)">Uprav</button>
+        <button (click)="zmaz(o)">Vymaž</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+</div>
