@@ -1,0 +1,24 @@
+<div class="block">
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Názov</th>
+      <th>Počet Dávok</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let v of vakciny">
+      <td>{{ v.nazov }}</td>
+      <td>{{ v.pocet_davok }}</td>
+      <td>
+        <button (click)="uprav(v)">Uprav</button>
+        <button (click)="zmaz(v)">Vymaž</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

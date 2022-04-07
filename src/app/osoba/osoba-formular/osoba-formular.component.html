@@ -1,0 +1,43 @@
+<div class="block">
+  <form [formGroup]="form">
+
+    <label>Meno:
+      <input formControlName="meno">
+    </label>
+    <br>
+
+    <label>Priezvisko:
+      <input formControlName="priezvisko">
+    </label>
+    <br>
+
+    <label>Rok narodenia:
+      <input formControlName="rok_nar">
+    </label>
+    <br>
+
+    <label>Rodné číslo:
+      <input formControlName="rod_cislo">
+    </label>
+    <br>
+    <label>Telefónne číslo:
+      <input formControlName="tel_cislo">
+    </label>
+    <br>
+
+    <label>Bydlisko:
+      <input formControlName="bydlisko">
+    </label>
+    <br>
+
+    <label>Pohlavie:
+      <input formControlName="pohlavie">
+    </label>
+    <br>
+
+    <button (click)="pridaj()" *ngIf="form.value.id === null">Pridaj</button>
+    <button (click)="uprav()" *ngIf="form.value.id !== null">Uprav</button>
+    <button (click)="zrus()">Vymaž</button>
+
+  </form>
+</div>
