@@ -149,5 +149,44 @@ input{
 
 input:hover{
   background-color: white;
+
+.block{
+  border: #FC5185 5px solid;
+  border-radius: 20px;
+  background-color: #3FC1C9;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  font-size: 40px;
+  color: #F5F5F5;
+}
+input{
+  float: right;
+  height: 30px;
+  width: 500px;
+  font-size: 25px;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #F5F5F5;
+  border: #FC5185 2px groove;
+  color: #FC5185;
+}
+
+input:hover{
+  background-color: antiquewhite;
+}
+button{
+  background-color: #FC5185;
+  height:40px;
+  width: 70px;
+  border-radius: 50px;
+  font-size:18px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 

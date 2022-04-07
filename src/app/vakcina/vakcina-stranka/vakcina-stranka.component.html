@@ -1,15 +1,24 @@
+
 <div class="wrapper">
   <header><h1>Evidencia očkovanosti</h1>
   <button (click)="chodSpat()">Späť</button></header>
+
+
+<div class="menu">
+  <h1>Evidencia vakcíny</h1>
+  <button (click)="chodSpat()">Späť</button>
+</div>
 
 
   <app-vakcina-formular [vakcina]="vakcinaNaUpravu"
                       (pridajVakcinu)="pridaj($event)"
                       (upravVakcinu)="uprav($event)">
   </app-vakcina-formular>
+
   <app-vakcina-zoznam [vakciny]="vakciny"
                     (upravVakcinu)="upravZoZoznamu($event)"
                     (vymazVakcinu)="zmazZoZoznamu($event)">
   </app-vakcina-zoznam>
 
 </div>
+

@@ -200,4 +200,55 @@ html {
 body {
 
   background-image: linear-gradient( 94.3deg, rgb(31, 20, 49) 10.9%, rgb(116, 101, 137) 87.1% );
+=======
+.menu{
+  border: #444F5A 10px ridge;
+  background-color: black;
+  max-width: 100%;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #F5F5F5;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.block{
+  border: #FC5185 5px solid;
+  border-radius: 20px;
+  background-color: #3FC1C9;
+  padding: 10px;
+  width: 500px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+}
+button{
+  background-color: #FC5185;
+  height:100px;
+  width: 200px;
+  border-radius: 50px;
+  border: black 3px solid;
+  font-size:25px;
+  font-weight: bold;
+
+
+}
+h1{
+  text-align: center;
+  color: #FC5185;
+  letter-spacing: 3px;
+  text-shadow: -1px -1px 0px white,
+  2px 2px 0px white,
+  4px 4px 0px white;
+}
+p{
+  text-align: center;
+  font-size: 20px;
+
 }

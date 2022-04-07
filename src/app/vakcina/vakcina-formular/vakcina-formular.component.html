@@ -1,3 +1,4 @@
+
 <section>
 <div class="wrapper">
   <form [formGroup]="form">
@@ -21,3 +22,24 @@
   </form>
 </div>
 </section>
+
+<div class="block">
+  <form [formGroup]="form">
+
+    <label>Názov:
+      <input formControlName="nazov">
+    </label>
+    <br>
+
+    <label>Počet Dávok:
+      <input formControlName="pocet_davok">
+    </label>
+    <br>
+
+    <button (click)="pridaj()" *ngIf="form.value.id === null">Pridaj</button>
+    <button (click)="uprav()" *ngIf="form.value.id !== null">Uprav</button>
+    <button (click)="zrus()">Vymaž</button>
+
+  </form>
+</div>
+

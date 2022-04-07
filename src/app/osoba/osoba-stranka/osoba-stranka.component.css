@@ -121,3 +121,34 @@ input:hover{
   background-color: white;
 }
 
+
+.menu{
+  border: #444F5A 10px ridge;
+  background-color: black;
+  max-width: 100%;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #F5F5F5;
+}
+h1{
+  text-align: center;
+  color: #FC5185;
+  display: inline;
+  letter-spacing: 3px;
+  text-shadow: -1px -1px 0px white,
+  2px 2px 0px white,
+  4px 4px 0px white;
+}
+
+button{
+  background-color: #FC5185;
+  height:40px;
+  width: 70px;
+  border-radius: 50px;
+  font-size:18px;
+  font-weight: bold;
+  float: right;
+
+
+}
+
