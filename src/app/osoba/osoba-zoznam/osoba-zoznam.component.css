@@ -1,4 +1,4 @@
-
+td{
   width: 150px;
   color: white;
 }
@@ -104,24 +104,5 @@ input{
   border: #D6C4EC 2px groove;
   color: #D6C4EC;
   margin-block: 10px;
-
-}
-
-
-th{
-  width: 150px;
-
-
-}
-button{
-  background-color: #FC5185;
-  height:20px;
-  width: 60px;
-  border-radius: 50px;
-  font-size:15px;
-  font-weight: bold;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
 
 }

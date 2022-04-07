@@ -119,17 +119,4 @@ input:hover{
 }
 th{
   width: 150px;
-
-
-}
-button{
-  background-color: #FC5185;
-  height:20px;
-  width: 60px;
-  border-radius: 50px;
-  font-size:15px;
-  font-weight: bold;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
 }

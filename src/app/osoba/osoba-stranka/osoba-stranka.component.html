@@ -3,11 +3,6 @@
   <header><h1>Evidencia osoby</h1>
   <button (click)="chodSpat()">Späť</button></header>
 
-<div class="menu">
-  <h1>Evidencia osoby</h1>
-  <button (click)="chodSpat()">Späť</button>
-
-</div>
 
   <app-osoba-formular [osoba]="osobaNaUpravu"
                       (pridajOsobu)="pridaj($event)"
@@ -19,3 +14,4 @@
                     (vymazOsobu)="zmazZoZoznamu($event)">
   </app-osoba-zoznam>
 
+</div>

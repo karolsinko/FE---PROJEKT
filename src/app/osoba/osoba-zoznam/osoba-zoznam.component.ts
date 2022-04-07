@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {EventEmitter, Input, Output} from '@angular/core';
 import {Osoba} from '../../models/osoba.model';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-osoba-zoznam',
   templateUrl: './osoba-zoznam.component.html',
-  styleUrls: ['./osoba-zoznam.component.css']
+  styleUrls: ['./osoba-zoznam.component.css'],
+  selector: 'app-osoba-zoznam'
 })
 export class OsobaZoznamComponent {
 
