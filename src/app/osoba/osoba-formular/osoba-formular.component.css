@@ -1,4 +1,6 @@
-
+/* TABULKY
+ --------------------------------------------
+*/
 table{
   margin-left: auto;
   margin-right: auto;
@@ -13,12 +15,18 @@ th{
   width: 150px;
   color: white;
 }
-
+/* TEXTY
+ --------------------------------------------
+*/
 h1{
   text-align: center;
   color: white;
   display: inline;
   letter-spacing: 3px;
+}
+
+h1:hover {
+  color: #D6C4EC;
 }
 
 p{
@@ -27,8 +35,16 @@ p{
   display:inline;
   letter-spacing: 3px;
   margin-bottom: 10px;
+  -webkit-transition: color 1s;
+  transition: color 1s;
 }
 
+p:hover {
+  color: #D6C4EC;
+}
+/* TLACIDLA
+ --------------------------------------------
+*/
 button {
   background: #D6C4EC;
   border: 2px solid #1A1A1A;
@@ -43,6 +59,7 @@ button {
   text-align: center;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   width: 100%;
+  padding-left: 20px;
 }
 
 button:hover {
@@ -56,6 +73,9 @@ button:active {
   box-shadow: none;
   transform: translateY(0);
 }
+/* LAYOUT
+ --------------------------------------------
+*/
 .wrapper {
   width: 900px;
   margin: 0 auto;
@@ -102,6 +122,9 @@ section {
 header {
   padding: 20px 0;
 }
+/* VSTUP - INPUTY
+ --------------------------------------------
+*/
 
 input{
   height: 30px;
@@ -111,11 +134,13 @@ input{
   text-align: center;
   background-color: #D6C4EC;
   border: #D6C4EC 2px groove;
-  color: black;
-  margin-block: 10px;
-
+  color: #1F1431;
+  margin-block: 50px;
+  box-sizing: border-box;
 }
 
-input:hover {
+
+input:hover{
   background-color: white;
 }
+

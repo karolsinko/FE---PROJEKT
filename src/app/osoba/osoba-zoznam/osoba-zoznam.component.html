@@ -1,15 +1,18 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
 <div class="wrapper">
 <section>
   <table class="table">
 
     <tr>
-      <td>Meno</td>
-      <td>Priezvisko</td>
-      <td>Rok narodenia</td>
-      <td>Rodné číslo</td>
-      <td>Telefónne číslo</td>
-      <td>Bydlisko</td>
-      <td>Pohlavie</td>
+      <th>Meno</th>
+      <th>Priezvisko</th>
+      <th>Rok narodenia</th>
+      <th>Rodné číslo</th>
+      <th>Telefónne číslo</th>
+      <th>Bydlisko</th>
+      <th>Pohlavie</th>
     </tr>
     <tbody>
     <tr *ngFor="let o of osoby">
@@ -21,8 +24,8 @@
       <td>{{ o.bydlisko }}</td>
       <td>{{ o.pohlavie }}</td>
       <td>
-        <button (click)="uprav(o)">Uprav</button>
-        <button (click)="zmaz(o)">Vymaž</button>
+        <button (click)="uprav(o)"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
+        <button (click)="zmaz(o)"><i class="bi bi-backspace-fill"></i>Vymaž</button>
       </td>
     </tr>
     </tbody>
