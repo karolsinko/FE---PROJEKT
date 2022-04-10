@@ -84,11 +84,12 @@ button:active {
  --------------------------------------------
 */
 .wrapper {
-  width: 900px;
+  width: 960px;
   margin: 0 auto;
 }
 
 header {
+  margin-top: 150px;
   width: 960px;
   text-align: center;
   color: white;
