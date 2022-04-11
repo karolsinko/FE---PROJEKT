@@ -26,6 +26,6 @@ export class VakcinaZoznamComponent {
   zmaz(vakcina: Vakcina): void {
     this.vymazVakcinu.emit(vakcina);
   }
-
+..
   */
 }
