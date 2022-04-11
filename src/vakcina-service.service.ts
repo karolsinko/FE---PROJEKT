@@ -15,13 +15,20 @@ export class VakcinaServiceService {
   getVakciny(): Observable<ZoznamVakcin[]> {
     return this.http.get<ZoznamVakcin[]>(`${this.apiUrl}`);
   }
+  createVakcina(vakcina: Vakcina): Observable<Vakcina> {
+    return this.http.post<Vakcina>(`${this.apiUrl}`, {nazov: vakcina.nazov, pocet_davok: vakcina.pocet_davok});
+  }
+
+  updateVakcina(id: string, vakcina: Vakcina): Observable<Vakcina>{
+    return this.http.put<Vakcina>(`${this.apiUrl}/${id}`, vakcina);
+  }
 
   getVakcina(id: string): Observable<Vakcina> {
     return this.http.get<Vakcina>(`${this.apiUrl}/${id}`);
   }
 
-  createVakcina(vakcina: Vakcina): Observable<Vakcina> {
-    return this.http.post<Vakcina>(`${this.apiUrl}`, {nazov: vakcina.nazov, pocet_davok: vakcina.pocet_davok});
+  deleteVakcina(id: string):Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
 }

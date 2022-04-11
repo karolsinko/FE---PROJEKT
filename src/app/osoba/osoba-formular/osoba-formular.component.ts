@@ -1,7 +1,7 @@
 import { Component, EventEmitter,Input,Output} from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {FormControl, FormGroup } from '@angular/forms';
 import {Osoba} from "../../models/osoba.model";
-
+import {OsobaServiceService} from "../../../osoba-service.service";
 
 @Component({
   selector: 'app-osoba-formular',
@@ -24,12 +24,18 @@ export class OsobaFormularComponent {
   @Output()
   upravOsobu = new EventEmitter<Osoba>();
 
-  form: FormGroup;
+  @Output()
+  zmazOsobu = new EventEmitter<Osoba>();
 
-  constructor() {
+  form!: FormGroup;
+
+  constructor(private osobaService: OsobaServiceService) {
+    this.vytvorForm();
+}
+  private vytvorForm(): void {
     this.form = new FormGroup({
       id: new FormControl(null),
-      meno: new FormControl(null),
+      meno: new FormControl(null, ),
       priezvisko: new FormControl(null),
       rok_nar: new FormControl(null),
       rod_cislo: new FormControl(null),
@@ -39,13 +45,22 @@ export class OsobaFormularComponent {
     });
   }
 
-  private fillForm(osoba: Osoba): void {
-    this.form.setValue({id:osoba.id,meno:osoba.meno,priezvisko:osoba.priezvisko,rok_nar:osoba.rok_nar,rod_cislo:osoba.rod_cislo,tel_cislo:osoba.tel_cislo,bydlisko:osoba.bydlisko,pohlavie:osoba.pohlavie})
+  private fillForm(osoba: Osoba): void{
+    this.form.controls["id"].setValue(osoba.id);
+    this.form.controls["meno"].setValue(osoba.meno);
+    this.form.controls["priezvisko"].setValue(osoba.priezvisko);
+    this.form.controls["rok_nar"].setValue(osoba.rok_nar);
+    this.form.controls["rod_cislo"].setValue(osoba.rod_cislo);
+    this.form.controls["tel_cislo"].setValue(osoba.tel_cislo);
+    this.form.controls["bydlisko"].setValue(osoba.bydlisko);
+    this.form.controls["pohlavie"].setValue(osoba.pohlavie);
   }
 
   public pridaj(): void {
-    this.pridajOsobu.emit({ id: Math.random().toString(), meno: this.form.value.meno, priezvisko: this.form.value.priezvisko, rok_nar: this.form.value.rok_nar, rod_cislo: this.form.value.rod_cislo, tel_cislo: this.form.value.tel_cislo, bydlisko: this.form.value.bydlisko, pohlavie: this.form.value.pohlavie});
+    if (this.form.valid){
+    this.pridajOsobu.emit(this.form.value);
     this.form.reset();
+  }
   }
 
   public uprav(): void {
@@ -57,4 +72,6 @@ export class OsobaFormularComponent {
     this.osoba = undefined;
     this.form.reset();
   }
+
+
 }

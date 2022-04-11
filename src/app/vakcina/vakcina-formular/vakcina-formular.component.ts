@@ -1,8 +1,7 @@
 import { Component, EventEmitter,Input,Output} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {Vakcina} from "../../models/vakcina.model";
-
-
+import {VakcinaServiceService} from "../../../vakcina-service.service";
 @Component({
   selector: 'app-vakcina-formular',
   templateUrl: './vakcina-formular.component.html',
@@ -24,9 +23,16 @@ export class VakcinaFormularComponent {
   @Output()
   upravVakcinu = new EventEmitter<Vakcina>();
 
-  form: FormGroup;
+  @Output()
+  zmazVakcinu = new EventEmitter<Vakcina>();
 
-  constructor() {
+  form!: FormGroup;
+
+  constructor(private vakcinaService: VakcinaServiceService) {
+    this.vytvorForm();
+  }
+
+  private vytvorForm(): void {
     this.form = new FormGroup({
       id: new FormControl(null),
       nazov: new FormControl(null),
@@ -37,16 +43,19 @@ export class VakcinaFormularComponent {
 
 
   private fillForm(vakcina: Vakcina): void {
-    this.form.setValue({id:vakcina.id,nazov:vakcina.nazov,pocet_davok:vakcina.pocet_davok})
-
+    this.form.controls["id"].setValue(vakcina.id);
+    this.form.controls["nazov"].setValue(vakcina.nazov);
+    this.form.controls["pocet_davok"].setValue(vakcina.pocet_davok);
   }
 
   public pridaj(): void {
-    this.pridajVakcinu.emit({ id: Math.random().toString(), nazov: this.form.value.nazov, pocet_davok: this.form.value.pocet_davok});
-    this.form.reset();
+    if (this.form.valid){
+      this.pridajVakcinu.emit(this.form.value);
+      this.form.reset();
+    }
   }
 
-  public uprav(): void {
+ /* public uprav(): void {
     this.upravVakcinu.emit(this.form.value);
     this.form.reset();
   }
@@ -55,4 +64,6 @@ export class VakcinaFormularComponent {
     this.vakcina = undefined;
     this.form.reset();
   }
+
+  */
 }

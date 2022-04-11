@@ -20,7 +20,8 @@
     <tr>
     <p>Pohlavie:</p><th><input formControlName="pohlavie" placeholder="Pohlavie"></th>
       <th><button (click)="pridaj()" *ngIf="form.value.id === null"><i class="bi bi-check-circle-fill"></i>Pridaj</button>
-      <button (click)="uprav()" *ngIf="form.value.id !== null"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
+
+        <button (click)="uprav()" *ngIf="form.value.id !== null"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
       <button (click)="zrus()"><i class="bi bi-backspace-fill"></i>Vymaž</button></th>
     </tr>
 

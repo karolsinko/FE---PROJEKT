@@ -1,18 +1,21 @@
-import { Component,OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Vakcina} from '../../models/vakcina.model';
+import {Vakcina, ZoznamVakcin} from '../../models/vakcina.model';
 import {VakcinaServiceService} from "../../../vakcina-service.service";
+import {Subscription} from "rxjs";
 
 @Component({
   templateUrl: './vakcina-stranka.component.html',
   styleUrls: ['./vakcina-stranka.component.css'],
   selector: 'app-vakcina-stranka'
 })
-export class VakcinaStrankaComponent implements OnInit{
+export class VakcinaStrankaComponent implements OnInit, OnDestroy{
 
-  vakciny: Vakcina[] = [];
+  vakciny: ZoznamVakcin[] = [];
 
   vakcinaNaUpravu?: Vakcina;
+
+  private subscription: Subscription = new Subscription();
 
   constructor(private router: Router,private vakcinaService: VakcinaServiceService) { }
 
@@ -20,14 +23,15 @@ export class VakcinaStrankaComponent implements OnInit{
     this.obnovitVakciny();
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   obnovitVakciny(): void {
-    this.vakcinaService.getVakciny().subscribe(data => {
+    this.subscription.add(this.vakcinaService.getVakciny().subscribe(data =>{
       console.log('prislo:', data);
-      this.vakciny = [];
-      for (const d of data) {
-        this.vakciny.push({ id: d.id, nazov: d.nazov, pocet_davok: d.pocet_davok});
-      }
-    });
+      this.vakciny = data;
+    }));
   }
 
   chodSpat(): void {
@@ -35,24 +39,31 @@ export class VakcinaStrankaComponent implements OnInit{
   }
 
   pridaj(vakcina: Vakcina): void {
-    this.vakciny.push(vakcina);
+    this.subscription.add(this.vakcinaService.createVakcina(vakcina).subscribe(data => {
+      console.log('prislo', data);
+      this.obnovitVakciny()
+    }));
   }
 
   uprav(vakcina: Vakcina): void {
-    const index = this.vakciny.findIndex(vakcinaArray => vakcinaArray.id === vakcina.id);
-    if (index !== -1) {
-      this.vakciny[index] = vakcina;
+    if (vakcina.id !== undefined) {
+      this.subscription.add(this.vakcinaService.updateVakcina(vakcina.id, vakcina).subscribe(data => {
+        console.log('prislo', data);
+        this.obnovitVakciny()
+      }));
     }
   }
 
-  upravZoZoznamu(vakcina: Vakcina): void {
-    this.vakcinaNaUpravu = vakcina;
+  upravZoZoznamu(id: string): void {
+      this.subscription.add(this.vakcinaService.getVakcina(id).subscribe(data => {
+        console.log('prislo', data);
+        this.vakcinaNaUpravu = data;
+      }));
   }
 
-  zmazZoZoznamu(vakcina: Vakcina): void {
-    const index = this.vakciny.findIndex(vakcinaArray => vakcinaArray.id === vakcina.id);
-    if (index !== -1) {
-      this.vakciny.splice(index, 1);
-    }
+  zmazZoZoznamu(id: string): void {
+    this.subscription.add(this.vakcinaService.deleteVakcina(id).subscribe(data => {
+      this.obnovitVakciny();
+    }));
   }
 }

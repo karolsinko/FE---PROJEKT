@@ -1,5 +1,5 @@
 import {EventEmitter, Input, Output} from '@angular/core';
-import {Osoba} from '../../models/osoba.model';
+import {Osoba, ZoznamOsob} from '../../models/osoba.model';
 import {Component} from "@angular/core";
 
 @Component({
@@ -10,14 +10,16 @@ import {Component} from "@angular/core";
 export class OsobaZoznamComponent {
 
   @Input()
-  osoby: Osoba[] = [];
+  osoby: ZoznamOsob[] = []
 
   @Output()
-  upravOsobu: EventEmitter<Osoba> = new EventEmitter<Osoba>();
+  upravOsobu: EventEmitter<string> = new EventEmitter<string>();
 
   @Output()
-  vymazOsobu: EventEmitter<Osoba> = new EventEmitter<Osoba>();
+  vymazOsobu: EventEmitter<string> = new EventEmitter<string>();
 
+  constructor() { }
+  /*
   uprav(osoba: Osoba): void {
     this.upravOsobu.emit(osoba);
   }
@@ -25,4 +27,6 @@ export class OsobaZoznamComponent {
   zmaz(osoba: Osoba): void {
     this.vymazOsobu.emit(osoba);
   }
+
+   */
 }

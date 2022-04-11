@@ -9,18 +9,21 @@
     <table class="table">
       <td><p>Názov:</p></td>
       <td><p>Počet dávok:</p></td>
-      <td><button (click)="uprav()" *ngIf="form.value.id !== null" ><i class="bi bi-arrow-clockwise"></i>Uprav</button></td>
+      <!--
+        <td><button (click)="uprav()" *ngIf="form.value.id !== null" ><i class="bi bi-arrow-clockwise"></i>Uprav</button></td>
+        -->
       <tbody>
 
       <td><input formControlName="nazov" placeholder="Nazov"></td>
       <td><input formControlName="pocet_davok" placeholder="Počet dávok"></td>
 
-      <td><button (click)="pridaj()" *ngIf="form.value.id === null"><i class="bi bi-check-circle-fill"></i>Pridaj</button>
-      <button (click)="zrus()"><i class="bi bi-backspace-fill"></i>Vymaž</button></td>
+            <td><button (click)="pridaj()" *ngIf="form.value.id === null"><i class="bi bi-check-circle-fill"></i>Pridaj</button>
+              <!--
+               <button (click)="zrus()"><i class="bi bi-backspace-fill"></i>Vymaž</button></td>
+ -->
+               </tbody>
+             </table>
 
-      </tbody>
-    </table>
-
-  </form>
-</div>
-</section>
+           </form>
+         </div>
+         </section>

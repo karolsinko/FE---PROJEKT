@@ -10,6 +10,7 @@ export class Osoba {
   pohlavie: string;
 
   constructor(osoba: Osoba) {
+    this.id = osoba.id;
     this.meno = osoba.meno;
     this.priezvisko = osoba.priezvisko;
     this.rok_nar = osoba.rok_nar;
@@ -32,7 +33,7 @@ export class Osoba {
 
 
 constructor(osoba: ZoznamOsob) {
-
+  this.id = osoba.id;
   this.meno= osoba.meno;
   this.priezvisko= osoba.priezvisko;
   this.rok_nar= osoba.rok_nar;
