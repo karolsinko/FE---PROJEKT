@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <title></title>
 </head>
 <div class="wrapper">
 <section>
@@ -24,8 +25,8 @@
       <td>{{ o.bydlisko }}</td>
       <td>{{ o.pohlavie }}</td>
       <td>
-        <button (click)="uprav(o)"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
-        <button (click)="zmaz(o)"><i class="bi bi-backspace-fill"></i>Vymaž</button>
+        <button (click)="uprav(o.id)"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
+        <button (click)="zmaz(o.id)"><i class="bi bi-backspace-fill"></i>Vymaž</button>
       </td>
     </tr>
     </tbody>

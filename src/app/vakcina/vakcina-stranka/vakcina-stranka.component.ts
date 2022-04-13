@@ -1,6 +1,6 @@
 import { Component,OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Vakcina} from '../../models/vakcina.model';
+import {ZoznamVakcin, Vakcina} from "../../models/vakcina.model";
 import {VakcinaServiceService} from "../../../vakcina-service.service";
 
 @Component({
@@ -10,11 +10,11 @@ import {VakcinaServiceService} from "../../../vakcina-service.service";
 })
 export class VakcinaStrankaComponent implements OnInit{
 
-  vakciny: Vakcina[] = [];
+  vakciny: ZoznamVakcin[] = [];
 
   vakcinaNaUpravu?: Vakcina;
 
-  constructor(private router: Router,private vakcinaService: VakcinaServiceService) { }
+  constructor(private router: Router, private vakcinaService: VakcinaServiceService) { }
 
   ngOnInit(): void {
     this.obnovitVakciny();
@@ -22,11 +22,8 @@ export class VakcinaStrankaComponent implements OnInit{
 
   obnovitVakciny(): void {
     this.vakcinaService.getVakciny().subscribe(data => {
-      console.log('prislo:', data);
-      this.vakciny = [];
-      for (const d of data) {
-        this.vakciny.push({ id: d.id, nazov: d.nazov, pocet_davok: d.pocet_davok});
-      }
+      console.log('Prislo: ', data);
+      this.vakciny = data;
     });
   }
 
@@ -35,24 +32,30 @@ export class VakcinaStrankaComponent implements OnInit{
   }
 
   pridaj(vakcina: Vakcina): void {
-    this.vakciny.push(vakcina);
+    this.vakcinaService.createVakcina(vakcina).subscribe(data => {
+      this.obnovitVakciny();
+    });
   }
 
   uprav(vakcina: Vakcina): void {
-    const index = this.vakciny.findIndex(vakcinaArray => vakcinaArray.id === vakcina.id);
-    if (index !== -1) {
-      this.vakciny[index] = vakcina;
+    if(vakcina.id !== undefined){
+      this.vakcinaService.updateVakcina(vakcina.id, vakcina).subscribe(data =>{
+        this.obnovitVakciny();
+      });
     }
   }
 
-  upravZoZoznamu(vakcina: Vakcina): void {
-    this.vakcinaNaUpravu = vakcina;
+  upravZoZoznamu(vakcinaId: number): void {
+    this.vakcinaService.getVakcina(vakcinaId).subscribe(data =>{
+      this.vakcinaNaUpravu = data;
+    });
   }
 
-  zmazZoZoznamu(vakcina: Vakcina): void {
-    const index = this.vakciny.findIndex(vakcinaArray => vakcinaArray.id === vakcina.id);
-    if (index !== -1) {
-      this.vakciny.splice(index, 1);
+  zmazZoZoznamu(vakcinaId: number): void {
+    if(confirm('Naozaj chces zmazat?')){
+      this.vakcinaService.deleteVakcina(vakcinaId).subscribe(data =>{
+        this.obnovitVakciny();
+      });
     }
   }
 }

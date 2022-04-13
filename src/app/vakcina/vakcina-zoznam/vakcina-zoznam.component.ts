@@ -2,26 +2,29 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vakcina} from '../../models/vakcina.model';
 
 @Component({
-  selector: 'app-vakcina-zoznam',
   templateUrl: './vakcina-zoznam.component.html',
-  styleUrls: ['./vakcina-zoznam.component.css']
+  styleUrls: ['./vakcina-zoznam.component.css'],
+  selector: 'app-vakcina-zoznam'
 })
 export class VakcinaZoznamComponent {
+
+  constructor() {
+  }
 
   @Input()
   vakciny: Vakcina[] = [];
 
   @Output()
-  upravVakcinu: EventEmitter<Vakcina> = new EventEmitter<Vakcina>();
+  upravVakcinu: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  vymazVakcinu: EventEmitter<Vakcina> = new EventEmitter<Vakcina>();
+  vymazVakcinu: EventEmitter<number> = new EventEmitter<number>();
 
-  uprav(vakcina: Vakcina): void {
-    this.upravVakcinu.emit(vakcina);
+  uprav(vakcinaId?: number): void {
+    this.upravVakcinu.emit(vakcinaId);
   }
 
-  zmaz(vakcina: Vakcina): void {
-    this.vymazVakcinu.emit(vakcina);
+  zmaz(vakcinaId?: number): void {
+    this.vymazVakcinu.emit(vakcinaId);
   }
 }
