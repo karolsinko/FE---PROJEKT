@@ -1,5 +1,4 @@
-import {EventEmitter, Input, Output} from '@angular/core';
-import {Component} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ZoznamOsob} from "../../models/osoba.model";
 
 @Component({

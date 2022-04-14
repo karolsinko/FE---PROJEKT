@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Vakcina} from '../../models/vakcina.model';
+import {ZoznamVakcin} from '../../models/vakcina.model';
 
 @Component({
   templateUrl: './vakcina-zoznam.component.html',
@@ -12,7 +12,7 @@ export class VakcinaZoznamComponent {
   }
 
   @Input()
-  vakciny: Vakcina[] = [];
+  vakciny: ZoznamVakcin[] = [];
 
   @Output()
   upravVakcinu: EventEmitter<number> = new EventEmitter<number>();
