@@ -256,7 +256,19 @@ input:hover{
     display: block;
   }
 }
+/*  IKONY
+-----------------------------------
+ */
+.bi-shield-fill-check{
+  color: white;
+  float:left;
+  font-size: 50px;
+}
 
+.bi-house{
+  float:left;
+  font-size:20px;
+}
 
 
 
