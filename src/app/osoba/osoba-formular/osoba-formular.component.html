@@ -1,43 +1,31 @@
-<div class="block">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <title></title>
+</head>
+<div class="wrapper">
+  <section>
   <form [formGroup]="form">
 
-    <label>Meno:
-      <input formControlName="meno">
-    </label>
-    <br>
+    <tr>
+    <p>Meno:</p><th><input formControlName="meno" placeholder="Meno"></th>
+    <p>Priezvisko:</p><th><input formControlName="priezvisko" placeholder="Priezvisko"></th>
+    </tr>
+    <tr>
+    <p>Rok narodenia:</p><th><input formControlName="rok_nar" placeholder="Rok narodenia"></th>
+    <p>Rodné číslo:</p><th><input formControlName="rod_cislo" placeholder="Rodné číslo"></th>
+    </tr>
+    <tr>
+    <p>Telefónne číslo:</p><th><input formControlName="tel_cislo" placeholder="Telefónne číslo"></th>
+    <p>Bydlisko:</p><th><input formControlName="bydlisko" placeholder="Bydlisko"></th>
+    </tr>
+    <tr>
+    <p>Pohlavie:</p><th><input formControlName="pohlavie" placeholder="Pohlavie"></th>
+      <th><button (click)="pridaj()" *ngIf="form.value.id === null"><i class="bi bi-check-circle-fill"></i>Pridaj</button>
+      <button (click)="uprav()" *ngIf="form.value.id !== null"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
+      <button (click)="zrus()"><i class="bi bi-backspace-fill"></i>Vymaž</button></th>
+    </tr>
 
-    <label>Priezvisko:
-      <input formControlName="priezvisko">
-    </label>
-    <br>
-
-    <label>Rok narodenia:
-      <input formControlName="rok_nar">
-    </label>
-    <br>
-
-    <label>Rodné číslo:
-      <input formControlName="rod_cislo">
-    </label>
-    <br>
-    <label>Telefónne číslo:
-      <input formControlName="tel_cislo">
-    </label>
-    <br>
-
-    <label>Bydlisko:
-      <input formControlName="bydlisko">
-    </label>
-    <br>
-
-    <label>Pohlavie:
-      <input formControlName="pohlavie">
-    </label>
-    <br>
-
-    <button (click)="pridaj()" *ngIf="form.value.id === null">Pridaj</button>
-    <button (click)="uprav()" *ngIf="form.value.id !== null">Uprav</button>
-    <button (click)="zrus()">Vymaž</button>
 
   </form>
+  </section>
 </div>

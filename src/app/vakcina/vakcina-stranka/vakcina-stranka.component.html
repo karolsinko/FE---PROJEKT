@@ -1,7 +1,16 @@
-<div class="menu">
-  <h1>Evidencia vakcíny</h1>
-  <button (click)="chodSpat()">Späť</button>
-</div>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <title></title>
+</head>
+
+<app-menu>
+  <div class='card-body'>
+  </div>
+</app-menu>
+
+  <header><h1>Evidencia očkovanosti</h1>
+  <button (click)="chodSpat()"><i class="bi bi-house"></i>Späť</button></header>
+
 
   <app-vakcina-formular [vakcina]="vakcinaNaUpravu"
                       (pridajVakcinu)="pridaj($event)"
@@ -12,4 +21,7 @@
                     (upravVakcinu)="upravZoZoznamu($event)"
                     (vymazVakcinu)="zmazZoZoznamu($event)">
   </app-vakcina-zoznam>
+
+
+
 

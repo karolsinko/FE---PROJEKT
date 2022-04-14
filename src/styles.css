@@ -1,8 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* Light mode
+
+.light-mode {
+  background-image: linear-gradient( 94.3deg, rgb(195, 159, 255) 10.9%, rgb(230, 209, 255) 87.1% );
+  color: #000000;
+}
+*/
+/*
 html {
-
-  background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
-
-
-
+  background-image: linear-gradient( 94.3deg, rgb(31, 20, 49) 10.9%, rgb(116, 101, 137) 87.1% );
+}
+*/
+body {
+  background-image: linear-gradient( 94.3deg, rgb(223, 223, 223) 10.9%, rgb(223, 223, 223) 87.1% );
 }

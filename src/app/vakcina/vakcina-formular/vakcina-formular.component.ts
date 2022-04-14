@@ -4,10 +4,9 @@ import {Vakcina} from "../../models/vakcina.model";
 
 
 @Component({
-  selector: 'app-vakcina-formular',
   templateUrl: './vakcina-formular.component.html',
-  styleUrls: ['./vakcina-formular.component.css']
-
+  styleUrls: ['./vakcina-formular.component.css'],
+  selector: 'app-vakcina-formular'
 })
 export class VakcinaFormularComponent {
 
@@ -17,6 +16,7 @@ export class VakcinaFormularComponent {
       this.fillForm(data);
     }
   }
+  form: FormGroup;
 
   @Output()
   pridajVakcinu = new EventEmitter<Vakcina>();
@@ -24,25 +24,22 @@ export class VakcinaFormularComponent {
   @Output()
   upravVakcinu = new EventEmitter<Vakcina>();
 
-  form: FormGroup;
-
   constructor() {
     this.form = new FormGroup({
       id: new FormControl(null),
       nazov: new FormControl(null),
       pocet_davok: new FormControl(null)
     });
-
   }
 
-
   private fillForm(vakcina: Vakcina): void {
-    this.form.setValue({id:vakcina.id,nazov:vakcina.nazov,pocet_davok:vakcina.pocet_davok})
-
+    this.form.controls['id'].setValue(vakcina.id)
+    this.form.controls['nazov'].setValue(vakcina.nazov)
+    this.form.controls['pocet_davok'].setValue(vakcina.pocet_davok)
   }
 
   public pridaj(): void {
-    this.pridajVakcinu.emit({ id: Math.random().toString(), nazov: this.form.value.nazov, pocet_davok: this.form.value.pocet_davok});
+    this.pridajVakcinu.emit(this.form.value);
     this.form.reset();
   }
 
