@@ -3,24 +3,37 @@
   <title></title>
 </head>
 
-<app-menu>
-  <div class='card-body'>
+<div class='dashboard-app'>
+  <div class='dashboard-nav'>
+    <app-menu></app-menu>
   </div>
-</app-menu>
+  <div class='dashboard-content'>
+    <div class='container'>
+      <div class='card'>
+        <div class='card-header'>
+          <h1>Evidencia očkovania</h1>
+          <button (click)="chodSpat()"><i class="bi bi-house"></i>Späť</button>
+        </div>
+        <div class='card-body'>
+          <app-vakcina-formular [vakcina]="vakcinaNaUpravu"
+                                (pridajVakcinu)="pridaj($event)"
+                                (upravVakcinu)="uprav($event)">
+          </app-vakcina-formular>
 
-  <header><h1>Evidencia očkovanosti</h1>
-  <button (click)="chodSpat()"><i class="bi bi-house"></i>Späť</button></header>
+          <app-vakcina-zoznam [vakciny]="vakciny"
+                              (upravVakcinu)="upravZoZoznamu($event)"
+                              (vymazVakcinu)="zmazZoZoznamu($event)">
+          </app-vakcina-zoznam>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  <app-vakcina-formular [vakcina]="vakcinaNaUpravu"
-                      (pridajVakcinu)="pridaj($event)"
-                      (upravVakcinu)="uprav($event)">
-  </app-vakcina-formular>
 
-  <app-vakcina-zoznam [vakciny]="vakciny"
-                    (upravVakcinu)="upravZoZoznamu($event)"
-                    (vymazVakcinu)="zmazZoZoznamu($event)">
-  </app-vakcina-zoznam>
+
 
 
 
