@@ -45,18 +45,18 @@ p{
 }
 
 p:hover {
-  color: #D6C4EC;
+  color: white;
 }
 
 /* TLACIDLA
  --------------------------------------------
 */
 button {
-  background: #D6C4EC;
+  background: navajowhite;
   border: 2px solid #1A1A1A;
   border-radius: 15px;
   box-sizing: border-box;
-  color: white;
+  color: #353084;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -150,4 +150,6 @@ input{
 input:hover{
   background-color: white;
 }
-
+.bi{
+  float: left;
+}

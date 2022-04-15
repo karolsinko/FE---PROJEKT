@@ -135,6 +135,7 @@ input{
   color: black;
   margin-block: 50px;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 
