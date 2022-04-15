@@ -5,9 +5,9 @@ table{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+
 }
 td{
-  border-bottom: #F5F5F5 1px solid;
   width: 150px;
   color: white;
 }
@@ -31,7 +31,7 @@ h1:hover {
 
 p{
   text-align: left;
-  color: white;
+  color: navajowhite;
   display:inline;
   letter-spacing: 3px;
   margin-bottom: 10px;
@@ -40,17 +40,17 @@ p{
 }
 
 p:hover {
-  color: #D6C4EC;
+  color: white;
 }
 /* TLACIDLA
  --------------------------------------------
 */
 button {
-  background: #D6C4EC;
+  background: navajowhite;
   border: 2px solid #1A1A1A;
   border-radius: 15px;
   box-sizing: border-box;
-  color: white;
+  color: #353084;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -74,6 +74,7 @@ button:active {
   box-shadow: none;
   transform: translateY(0);
 }
+
 /* LAYOUT
  --------------------------------------------
 */
@@ -114,9 +115,7 @@ body {
 header,
 nav,
 section {
-  border: 1px solid rgba(255,255,255,0.8);
   margin-bottom: 10px;
-  border-radius: 3px;
   padding: 10px;
 }
 
@@ -133,15 +132,19 @@ input{
   font-size: 25px;
   margin: 10px;
   text-align: center;
-  background-color: #D6C4EC;
-  border: #D6C4EC 2px groove;
-  color: #1F1431;
+  background-color: white;
+  border: navajowhite 2px groove;
+  color: black;
   margin-block: 50px;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 
 input:hover{
-  background-color: white;
+  background-color: navajowhite;
+}
+.bi{
+  float:left;
 }
 

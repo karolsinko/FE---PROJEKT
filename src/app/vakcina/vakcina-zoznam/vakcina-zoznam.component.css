@@ -13,12 +13,12 @@ td{
 }
 th{
   width: 150px;
-  color: white;
+  color: navajowhite;
   -webkit-transition: color 1s;
   transition: color 1s;
 }
 th:hover {
-  color: #D6C4EC;
+  color: white;
 }
 /* TEXTY
  --------------------------------------------
