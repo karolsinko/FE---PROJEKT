@@ -19,8 +19,15 @@
         <button (click)="uprav(v.id)"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
         <button (click)="zmaz(v.id)"><i class="bi bi-backspace-fill"></i>Vymaž</button>
       </td>
+
     </tr>
+
     </tbody>
   </table>
 
+<mat-paginator [length]="100"
+               [pageSize]="5"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               aria-label="Select page">
+</mat-paginator>
 
