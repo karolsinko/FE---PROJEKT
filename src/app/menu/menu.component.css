@@ -381,7 +381,8 @@ h1, .h1 {
 }
 
 .dashboard-nav-item:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background-color: #353084;
+
 }
 
 .active {
@@ -456,4 +457,5 @@ h1, .h1 {
     left: 0;
   }
 }
+
 

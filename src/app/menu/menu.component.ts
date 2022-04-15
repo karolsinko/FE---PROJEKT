@@ -17,6 +17,7 @@ export class MenuComponent {
   public openMenu(m: MENU) {
     if (m === MENU.OSOBA) {
       this.router.navigate(['/osoba']);
+
     }else if(m=== MENU.VAKCINA){
       this.router.navigate(['/vakcina']);
         }

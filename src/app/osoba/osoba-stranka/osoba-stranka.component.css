@@ -271,7 +271,11 @@ input:hover{
   float:left;
   font-size:20px;
 }
-
+.spat{
+  background-color: black;
+  color: navajowhite;
+  border: navajowhite 1px groove;
+}
 
 
 
