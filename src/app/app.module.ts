@@ -22,6 +22,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { StepperTableComponent } from './materials/stepper-table/stepper-table.component';
 import {MatTableModule} from "@angular/material/table";
+import { OckovanostFormularComponent } from './ockovanost/ockovanost-formular/ockovanost-formular.component';
+import { OckovanostStrankaComponent } from './ockovanost/ockovanost-stranka/ockovanost-stranka.component';
+import { OckovanostZoznamComponent } from './ockovanost/ockovanost-zoznam/ockovanost-zoznam.component';
 
 
 
@@ -38,6 +41,9 @@ import {MatTableModule} from "@angular/material/table";
     PaginatorComponent,
     StepperComponent,
     StepperTableComponent,
+    OckovanostFormularComponent,
+    OckovanostStrankaComponent,
+    OckovanostZoznamComponent,
   ],
   imports: [
     BrowserModule,
