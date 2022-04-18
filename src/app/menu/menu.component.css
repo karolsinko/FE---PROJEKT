@@ -259,6 +259,9 @@ h1, .h1 {
   font-size: 2.5rem;
   font-weight: normal;
 }
+/*
+-----------------------------------
+ */
 
 
 .dashboard {
@@ -278,6 +281,7 @@ h1, .h1 {
   overflow: auto;
   background-color: #353084;
 }
+
 
 .dashboard-compact .dashboard-nav {
   display: none;
@@ -458,4 +462,12 @@ h1, .h1 {
   }
 }
 
-
+.date{
+  position: absolute;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color:white;
+  font-size: 12px;
+}

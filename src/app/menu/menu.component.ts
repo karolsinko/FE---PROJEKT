@@ -9,7 +9,7 @@ enum MENU { OSOBA, VAKCINA,OCKOVANOST}
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-
+  date=new Date();
   menu = MENU;
 
   constructor(private router: Router) { }
