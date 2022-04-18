@@ -376,6 +376,8 @@ h1, .h1 {
   align-items: center;
   letter-spacing: 0.02em;
   transition: ease-out 0.5s;
+  background-color: #353084;
+
 }
 
 .dashboard-nav-item i {
@@ -385,7 +387,7 @@ h1, .h1 {
 }
 
 .dashboard-nav-item:hover {
-  background-color: #353084;
+  background-color: #443ea2;
 
 }
 

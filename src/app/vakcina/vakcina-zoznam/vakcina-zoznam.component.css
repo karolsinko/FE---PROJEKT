@@ -153,11 +153,9 @@ mat-paginator{
   color: navajowhite;
   display: flex;
   justify-content: center;
-
 }
 ::ng-deep .mat-paginator .mat-icon-button{
   background-color: navajowhite;
   color: #443ea2;
   margin: 2px;
-
 }
