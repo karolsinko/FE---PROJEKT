@@ -1,1 +1,33 @@
-<p>ockovanost-zoznam works!</p>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <title></title>
+</head>
+<div class="wrapper">
+  <section>
+    <table class="table">
+      <tr>
+        <th>Meno</th>
+        <th>Priezvisko</th>
+        <th>Rodné číslo</th>
+        <th>Názov vakcíny</th>
+        <th>Dátum očkovania</th>
+      </tr>
+      <tbody>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <button><i class="bi bi-arrow-clockwise"></i>Uprav</button>
+          <button><i class="bi bi-backspace-fill"></i>Vymaž</button>
+      </tbody>
+    </table>
+
+    <mat-paginator [length]="100"
+                   [pageSize]="5"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   aria-label="Select page">
+    </mat-paginator>
+  </section>
+</div>
+

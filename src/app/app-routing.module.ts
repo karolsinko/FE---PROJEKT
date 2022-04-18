@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {MenuComponent} from './menu/menu.component';
 import {OsobaStrankaComponent} from "./osoba/osoba-stranka/osoba-stranka.component";
 import {VakcinaStrankaComponent} from "./vakcina/vakcina-stranka/vakcina-stranka.component";
+import {OckovanostStrankaComponent} from "./ockovanost/ockovanost-stranka/ockovanost-stranka.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'vakcina',
     component: VakcinaStrankaComponent
+  },
+  {
+    path: 'ockovanost',
+    component: OckovanostStrankaComponent
   },
   {
     path: '',
