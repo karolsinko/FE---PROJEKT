@@ -31,7 +31,7 @@ h1{
 }
 
 h1:hover {
-  color: #D6C4EC;
+  color: white;
 }
 
 p{
@@ -56,7 +56,7 @@ button {
   border: 2px solid #1A1A1A;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #353084;
+  color: #443ea2;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -84,7 +84,7 @@ button:active {
  --------------------------------------------
 */
 .wrapper {
-  width: 900px;
+  width: 960px;
   margin: 0 auto;
 }
 
@@ -120,9 +120,7 @@ body {
 header,
 nav,
 section {
-  border: 1px solid rgba(255,255,255,0.8);
   margin-bottom: 10px;
-  border-radius: 3px;
   padding: 10px;
 }
 
@@ -150,6 +148,14 @@ input{
 input:hover{
   background-color: white;
 }
-.bi{
-  float: left;
+
+mat-paginator{
+  color: navajowhite;
+  display: flex;
+  justify-content: center;
+}
+::ng-deep .mat-paginator .mat-icon-button{
+  background-color: navajowhite;
+  color: #443ea2;
+  margin: 2px;
 }

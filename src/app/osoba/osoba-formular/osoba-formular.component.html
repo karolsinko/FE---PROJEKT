@@ -5,27 +5,63 @@
 <div class="wrapper">
   <section>
   <form [formGroup]="form">
+<table class="table">
+<tr>
+  <td><div class="group">
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Meno</label>
+  </div></td>
 
+  <td><div class="group">
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Priezvisko</label>
+  </div></td>
+</tr>
     <tr>
-    <p>Meno:</p><th><input formControlName="meno" placeholder="Meno"></th>
-    <p>Priezvisko:</p><th><input formControlName="priezvisko" placeholder="Priezvisko"></th>
+      <td><div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Rok narodenia</label>
+      </div></td>
+      <td><div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Rodné číslo</label>
+      </div></td>
     </tr>
     <tr>
-    <p>Rok narodenia:</p><th><input formControlName="rok_nar" placeholder="Rok narodenia"></th>
-    <p>Rodné číslo:</p><th><input formControlName="rod_cislo" placeholder="Rodné číslo"></th>
+      <td><div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Telefónne číslo</label>
+      </div></td>
+      <td><div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Bydlisko</label>
+      </div></td>
     </tr>
     <tr>
-    <p>Telefónne číslo:</p><th><input formControlName="tel_cislo" placeholder="Telefónne číslo"></th>
-    <p>Bydlisko:</p><th><input formControlName="bydlisko" placeholder="Bydlisko"></th>
-    </tr>
-    <tr>
-    <p>Pohlavie:</p><th><input formControlName="pohlavie" placeholder="Pohlavie"></th>
-      <th><button (click)="pridaj()" *ngIf="form.value.id === null"><i class="bi bi-check-circle-fill"></i>Pridaj</button>
-      <button (click)="uprav()" *ngIf="form.value.id !== null"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
-      <button (click)="zrus()"><i class="bi bi-backspace-fill"></i>Vymaž</button></th>
+      <td><div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Pohlavie</label>
+      </div></td>
+      <td><button class="a" (click)="pridaj()" *ngIf="form.value.id === null"><i class="bi bi-check-circle-fill"></i>Pridaj</button>
+      <button class="a" (click)="uprav()" *ngIf="form.value.id !== null"><i class="bi bi-arrow-clockwise"></i>Uprav</button><br>
+      <button class="a" (click)="zrus()"><i class="bi bi-backspace-fill"></i>Vymaž</button></td>
     </tr>
 
-
+</table>
   </form>
   </section>
 </div>

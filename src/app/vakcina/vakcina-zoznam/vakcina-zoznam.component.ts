@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ZoznamVakcin} from '../../models/vakcina.model';
+import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   templateUrl: './vakcina-zoznam.component.html',
@@ -8,7 +9,14 @@ import {ZoznamVakcin} from '../../models/vakcina.model';
 })
 export class VakcinaZoznamComponent {
 
-  constructor() {
+  length = 500;
+  pageSize = 5;
+  pageIndex = 0;
+
+  handlePageEvent(event: PageEvent) {
+    this.length = event.length;
+    this.pageSize = event.pageSize;
+    this.pageIndex = event.pageIndex;
   }
 
   @Input()

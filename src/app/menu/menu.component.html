@@ -43,7 +43,13 @@ $(document).ready(function () {
     <nav class="dashboard-nav-list">
       <a (click)="openMenu(menu.VAKCINA)" class="dashboard-nav-item"><i class="bi bi-eyedropper"></i> |  Vakcína</a>
       <a (click)="openMenu(menu.OSOBA)" class="dashboard-nav-item"><i class="bi bi-person"></i> |  Osoba</a>
+      <a (click)="openMenu(menu.OCKOVANOST)" class="dashboard-nav-item"><i class="bi bi-clipboard-heart"></i> |  Očkovanosť</a>
+
     </nav>
+
+      <div class="date">
+      &copy; {{date| date:'dd.MM.yyyy'}}
+    </div>
   </div>
 </div>
 

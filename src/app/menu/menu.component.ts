@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 
-enum MENU { OSOBA, VAKCINA}
+enum MENU { OSOBA, VAKCINA,OCKOVANOST}
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +9,7 @@ enum MENU { OSOBA, VAKCINA}
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-
+  date=new Date();
   menu = MENU;
 
   constructor(private router: Router) { }
@@ -20,7 +20,9 @@ export class MenuComponent {
 
     }else if(m=== MENU.VAKCINA){
       this.router.navigate(['/vakcina']);
-        }
+        }else if(m=== MENU.OCKOVANOST){
+      this.router.navigate(['/ockovanost']);
+    }
   }
 
 }
