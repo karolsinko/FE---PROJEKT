@@ -50,6 +50,7 @@ p:hover {
 /* TLACIDLA
  --------------------------------------------
 */
+
 button{
   display: block;
   font-weight: 700;
@@ -195,5 +196,4 @@ mat-paginator{
   width: 40px;
   font-size: 40px;
   line-height: 40px;
-
 }
