@@ -25,8 +25,7 @@ import {MatTableModule} from "@angular/material/table";
 import { OckovanostFormularComponent } from './ockovanost/ockovanost-formular/ockovanost-formular.component';
 import { OckovanostStrankaComponent } from './ockovanost/ockovanost-stranka/ockovanost-stranka.component';
 import { OckovanostZoznamComponent } from './ockovanost/ockovanost-zoznam/ockovanost-zoznam.component';
-
-
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -44,6 +43,7 @@ import { OckovanostZoznamComponent } from './ockovanost/ockovanost-zoznam/ockova
     OckovanostFormularComponent,
     OckovanostStrankaComponent,
     OckovanostZoznamComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -54,6 +54,7 @@ import { OckovanostZoznamComponent } from './ockovanost/ockovanost-zoznam/ockova
     HttpClientModule,
     MatPaginatorModule,
     MatStepperModule,
+    MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
@@ -62,4 +63,6 @@ import { OckovanostZoznamComponent } from './ockovanost/ockovanost-zoznam/ockova
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

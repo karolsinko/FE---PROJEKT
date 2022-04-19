@@ -15,8 +15,8 @@
       <td>{{ v.nazov }}</td>
       <td>{{ v.pocet_davok }}</td>
       <td>
-        <button (click)="uprav(v.id)"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
-        <button (click)="zmaz(v.id)"><i class="bi bi-backspace-fill"></i>Vymaž</button>
+        <button class="btn btn--action" (click)="uprav(v.id)"><span class="uprav">Uprav</span></button>
+        <button class="btn btn--action" (click)="zmaz(v.id)"><span class="vymaz">Vymaž</span></button>
       </td>
 
     </tr>
