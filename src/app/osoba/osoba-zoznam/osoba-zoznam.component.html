@@ -5,7 +5,6 @@
 <div class="wrapper">
 <section>
   <table class="table">
-
     <tr>
       <th>Meno</th>
       <th>Priezvisko</th>
@@ -25,11 +24,17 @@
       <td>{{ o.bydlisko }}</td>
       <td>{{ o.pohlavie }}</td>
       <td>
-        <button (click)="uprav(o.id)"><i class="bi bi-arrow-clockwise"></i>Uprav</button>
-        <button (click)="zmaz(o.id)"><i class="bi bi-backspace-fill"></i>Vymaž</button>
+        <button class="btn btn--action" (click)="uprav(o.id)"><span class="uprav">Uprav</span></button>
+        <button class="btn btn--action" (click)="zmaz(o.id)"><span class="vymaz">Vymaž</span></button>
       </td>
     </tr>
     </tbody>
   </table>
+
+  <mat-paginator [length]="100"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 aria-label="Select page">
+  </mat-paginator>
 </section>
 </div>

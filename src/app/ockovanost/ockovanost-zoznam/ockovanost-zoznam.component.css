@@ -2,22 +2,25 @@
  --------------------------------------------
 */
 table{
+
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 td{
+  border-bottom: #F5F5F5 1px solid;
   width: 150px;
   color: white;
 }
 th{
+border: 0;
   width: 150px;
   color: navajowhite;
   -webkit-transition: color 1s;
   transition: color 1s;
 }
 th:hover {
-  color: white;
+  color: #D6C4EC;
 }
 /* TEXTY
  --------------------------------------------
@@ -30,7 +33,7 @@ h1{
 }
 
 h1:hover {
-  color: white;
+  color: #D6C4EC;
 }
 
 p{
@@ -50,64 +53,35 @@ p:hover {
 /* TLACIDLA
  --------------------------------------------
 */
-
-button{
-  display: block;
-  font-weight: 700;
-  font-size: 14px;
-  width: 100px;
-  height: 25px;
-  padding: 3px;
-  margin-bottom: 5px;
-  border-radius: 1.5rem;
-  background-color: navajowhite;
-  transition: all .5s ease 0s;
-  box-shadow: 0 6px black;
-}
-
-span{
-  display: inline-block;
+button {
+  background: navajowhite;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
   color: #353084;
-  position: relative;
-  transition: all .5s ease;
-}
-.uprav::before,.vymaz::before{
-  font-family: "Font Awesome 5 Free";
-  color: #353084;
-  font-weight: 900;
-  font-size: 14px;
-  display: inline-block;
-  position: absolute;
-  top: 0px;
-  left: 1.5rem;
-  opacity: 0;
-  transition: all .1s ease 0s;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  width: 100%;
+  padding-left: 20px;
 }
 
-.uprav::before{
-  content: '\f304';
-}
-.vymaz::before{
-  content: '\f1f8';
-}
-button:hover{
-  box-shadow: 0 6px white;
-
-}
-button:hover span{
-  padding-left: 2rem;
-}
-
-button:hover span:before{
-  left: 0;
-  opacity: 1;
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  border: 1px solid rgba(255,255,255,0.8);
 }
 
 button:active {
-
-  transform: translateY(5px);
+  box-shadow: none;
+  transform: translateY(0);
 }
-
 /* LAYOUT
  --------------------------------------------
 */
@@ -176,8 +150,9 @@ input{
 input:hover{
   background-color: white;
 }
-
-
+.bi{
+  float: left;
+}
 mat-paginator{
   color: navajowhite;
   display: flex;
@@ -189,11 +164,4 @@ mat-paginator{
   color: #443ea2;
   margin: 2px;
 
-
-}
-.mat-icon{
-  height: 40px;
-  width: 40px;
-  font-size: 40px;
-  line-height: 40px;
 }
