@@ -279,13 +279,13 @@ input:hover{
 /*   IKONY
 -----------------------------------------
  */
-.bi-person{
+.bi-clipboard-heart{
   color: navajowhite;
   float:left;
   font-size: 50px;
   margin-top: -12px;
 }
-.bi-person:hover{
+.bi-clipboard-heart:hover{
   color:white;
 }
 
