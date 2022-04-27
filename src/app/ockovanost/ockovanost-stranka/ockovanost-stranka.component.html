@@ -14,11 +14,11 @@
           <button class="spat" (click)="chodSpat()"><i class="bi-house"></i>Späť</button>
         </div>
         <div class='card-body'>
-          <app-ockovanost-formular [ockovanie]= "ockovanieNaUpravu"
+          <app-ockovanost-formular [ockovanie]= "ockovanieNaUpravu!"
                               (pridajOckovanie)="pridaj($event)"
                               (upravOckovanie)="uprav($event)">
           </app-ockovanost-formular>
-          <app-ockovanost-zoznam [ockovanie]="ockovanie"
+          <app-ockovanost-zoznam [ockovania]="ockovania"
                             (upravOckovanie)="upravZoZoznamu($event)"
                             (vymazOckovanie)="zmazZoZoznamu($event)">
           </app-ockovanost-zoznam>

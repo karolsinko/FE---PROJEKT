@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {Ockovanie, OckovanieZoznam} from "../../models/ockovanie.model";
 import {OckovanieServiceService} from "../../ockovanie-service.service";
@@ -12,7 +12,7 @@ export class OckovanostStrankaComponent{
 
   constructor(private router: Router, private ockovanieService: OckovanieServiceService) { }
 
-  ockovanie: OckovanieZoznam[] = [];
+  ockovania: OckovanieZoznam[] = [];
 
   ockovanieNaUpravu?: Ockovanie;
 
@@ -24,7 +24,7 @@ export class OckovanostStrankaComponent{
   refreshOckovanie(): void {
     this.ockovanieService.getOckovania().subscribe(data => {
       console.log('prislo:', data);
-      this.ockovanie = data;
+      this.ockovania = data;
     });
   }
 
@@ -34,14 +34,12 @@ export class OckovanostStrankaComponent{
 
   pridaj(ockovanie: Ockovanie): void {
     this.ockovanieService.createOckovanie(ockovanie).subscribe(data => {
-      console.log('prislo:', data);
       this.refreshOckovanie();
     });
   }
   uprav(ockovanie: Ockovanie): void {
     if (ockovanie.id !== undefined) {
       this.ockovanieService.updateOckovanie(ockovanie.id, ockovanie).subscribe(data => {
-        console.log('prislo:', data);
         this.refreshOckovanie();
       });
     }
@@ -49,7 +47,6 @@ export class OckovanostStrankaComponent{
 
   upravZoZoznamu(id: number): void {
     this.ockovanieService.getOckovanie(id).subscribe(data => {
-      console.log('prislo:', data);
       this.ockovanieNaUpravu = data;
     });
   }

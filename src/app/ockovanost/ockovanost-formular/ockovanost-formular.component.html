@@ -42,19 +42,10 @@
             <span class="bar"></span>
             <label>Dátum očkovania</label>
           </div></td>
-        </tr>
-        <tr>
-          <td><div class="group">
-            <input type="text" formControlName="pohlavie" required>
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>Pohlavie</label>
-          </div></td>
-          <td><button class="btn btn--action" (click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button>
+        <td><button class="btn btn--action" (click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button>
             <button class="btn btn--action" (click)="uprav()" *ngIf="form.value.id !== null"><span class="uprav">Uprav</span></button><br>
             <button class="btn btn--action" (click)="zrus()"><span class="vymaz">Vymaž</span></button></td>
-        </tr>
-
+             </tr>
       </table>
     </form>
   </section>

@@ -8,11 +8,8 @@ import {OckovanieZoznam} from "../../models/ockovanie.model";
 })
 export class OckovanostZoznamComponent{
 
-  term!: string;
-
-
   @Input()
-  ockovanie: OckovanieZoznam[] = [];
+  ockovania: OckovanieZoznam[] = [];
 
   @Output()
   upravOckovanie: EventEmitter<number> = new EventEmitter<number>();

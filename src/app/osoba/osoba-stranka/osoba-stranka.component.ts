@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Osoba, ZoznamOsob} from '../../models/osoba.model';
 import {OsobaServiceService} from "../../../osoba-service.service";
@@ -8,7 +8,7 @@ import {OsobaServiceService} from "../../../osoba-service.service";
   styleUrls: ['./osoba-stranka.component.css'],
   selector: 'app-osoba-stranka'
 })
-export class OsobaStrankaComponent {
+export class OsobaStrankaComponent implements OnInit{
 
   osoby: ZoznamOsob[] = [];
 
