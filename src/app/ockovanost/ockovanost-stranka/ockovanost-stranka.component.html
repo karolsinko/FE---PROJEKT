@@ -14,8 +14,9 @@
           <button class="spat" (click)="chodSpat()"><i class="bi-house"></i>Späť</button>
         </div>
         <div class='card-body'>
-         <app-ockovanost-zoznam></app-ockovanost-zoznam>
-
+         <app-ockovanost-zoznam [vakciny]="vakciny"
+                                [osoby]="osoby">
+         </app-ockovanost-zoznam>
         </div>
       </div>
     </div>

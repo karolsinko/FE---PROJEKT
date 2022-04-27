@@ -42,9 +42,9 @@ export class OsobaFormularComponent {
     this.form.controls['id'].setValue(osoba.id);
     this.form.controls['meno'].setValue(osoba.meno);
     this.form.controls['priezvisko'].setValue(osoba.priezvisko);
-    this.form.controls['rok_nar'].setValue(osoba.rok_nar);
-    this.form.controls['rod_cislo'].setValue(osoba.rod_cislo);
-    this.form.controls['tel_cislo'].setValue(osoba.tel_cislo);
+    this.form.controls['rok_nar'].setValue(osoba.rokNar);
+    this.form.controls['rod_cislo'].setValue(osoba.rodCislo);
+    this.form.controls['tel_cislo'].setValue(osoba.telCislo);
     this.form.controls['bydlisko'].setValue(osoba.bydlisko);
     this.form.controls['pohlavie'].setValue(osoba.pohlavie);
   }
