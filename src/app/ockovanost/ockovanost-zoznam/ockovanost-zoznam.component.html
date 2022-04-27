@@ -4,25 +4,25 @@
 </head>
 <div class="wrapper">
   <section>
+    <form [formGroup]="zoznam">
     <table class="table">
       <tr>
-        <th>Meno</th>
-        <th>Priezvisko</th>
-        <th>Rodné číslo</th>
-        <th>Názov vakcíny</th>
-        <th>Dátum očkovania</th>
+        <th>ID</th>
+        <th>ID osoby</th>
+        <th>ID vakcíny</th>
+        <th>Platnosť OD</th>
+        <th>Platnosť DO</th>
       </tr>
       <tbody>
-      <tr *ngFor="let o of osoby">
-        <td>{{ o.meno }}</td>
-        <td>{{ o.priezvisko }}</td>
-        <td>{{ o.rodCislo}}</td>
-      <tr *ngFor="let v of vakciny">
-        <td>{{ v.nazov }}</td>
-      </tr>
+      <tr *ngFor="let o of ockovania">
+        <td>{{ o.id}}</td>
+        <td>{{ o.osobaId }}</td>
+        <td>{{ o.vakcinaId }}</td>
+        <td>{{ o.timeStampZac }}</td>
+        <td>{{ o.timeStampKon }}</td>
       </tbody>
     </table>
-
+    </form>
     <mat-paginator [length]="100"
                    [pageSize]="5"
                    [pageSizeOptions]="[5, 10, 25, 100]"
