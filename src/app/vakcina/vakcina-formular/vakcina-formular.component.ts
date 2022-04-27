@@ -28,14 +28,14 @@ export class VakcinaFormularComponent {
     this.form = new FormGroup({
       id: new FormControl(null),
       nazov: new FormControl(null),
-      pocet_davok: new FormControl(null)
+      pocetDavok: new FormControl(null)
     });
   }
 
   private fillForm(vakcina: Vakcina): void {
     this.form.controls['id'].setValue(vakcina.id)
     this.form.controls['nazov'].setValue(vakcina.nazov)
-    this.form.controls['pocet_davok'].setValue(vakcina.pocetDavok)
+    this.form.controls['pocetDavok'].setValue(vakcina.pocetDavok)
   }
 
   public pridaj(): void {
