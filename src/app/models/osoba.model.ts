@@ -21,7 +21,7 @@ export class Osoba {
   }
 }
 
-  export class ZoznamOsob{
+  export class ZoznamOsob {
   id?: number;
   meno: string;
   priezvisko: string;
@@ -32,14 +32,14 @@ export class Osoba {
   pohlavie: string;
 
 
-constructor(osoba: ZoznamOsob) {
-  this.id = osoba.id;
-  this.meno= osoba.meno;
-  this.priezvisko= osoba.priezvisko;
-  this.rokNar= osoba.rokNar;
-  this.rodCislo= osoba.rodCislo;
-  this.telCislo= osoba.telCislo;
-  this.bydlisko= osoba.bydlisko;
-  this.pohlavie= osoba.pohlavie;
-}
+  constructor(osoba: ZoznamOsob) {
+    this.id = osoba.id;
+    this.meno = osoba.meno;
+    this.priezvisko = osoba.priezvisko;
+    this.rokNar = osoba.rokNar;
+    this.rodCislo = osoba.rodCislo;
+    this.telCislo = osoba.telCislo;
+    this.bydlisko = osoba.bydlisko;
+    this.pohlavie = osoba.pohlavie;
+  }
 }
