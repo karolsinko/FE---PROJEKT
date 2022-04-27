@@ -162,6 +162,7 @@ header {
 .group        {
   position:relative;
   margin-bottom:45px;
+  margin-left: 45px;
 }
 input         {
   font-size:18px;

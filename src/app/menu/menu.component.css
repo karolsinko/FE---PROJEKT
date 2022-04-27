@@ -280,6 +280,7 @@ h1, .h1 {
   bottom: 0;
   overflow: auto;
   background-color: #353084;
+  cursor: pointer;
 }
 
 

@@ -35,7 +35,7 @@ export class VakcinaFormularComponent {
   private fillForm(vakcina: Vakcina): void {
     this.form.controls['id'].setValue(vakcina.id)
     this.form.controls['nazov'].setValue(vakcina.nazov)
-    this.form.controls['pocet_davok'].setValue(vakcina.pocet_davok)
+    this.form.controls['pocet_davok'].setValue(vakcina.pocetDavok)
   }
 
   public pridaj(): void {

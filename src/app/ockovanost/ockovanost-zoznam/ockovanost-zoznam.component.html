@@ -13,13 +13,13 @@
         <th>Dátum očkovania</th>
       </tr>
       <tbody>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <button class="btn btn--action"><span class="uprav">Uprav</span></button>
-          <button  class="btn btn--action"><span class="vymaz">Vymaž</span></button>
+      <tr *ngFor="let o of osoby">
+        <td>{{ o.meno }}</td>
+        <td>{{ o.priezvisko }}</td>
+        <td>{{ o.rodCislo}}</td>
+      <tr *ngFor="let v of vakciny">
+        <td>{{ v.nazov }}</td>
+      </tr>
       </tbody>
     </table>
 
