@@ -1,7 +1,7 @@
 import { Component,OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ZoznamVakcin, Vakcina} from "../../models/vakcina.model";
-import {VakcinaServiceService} from "../../../vakcina-service.service";
+import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 
 @Component({
   templateUrl: './vakcina-stranka.component.html',

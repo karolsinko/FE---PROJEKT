@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {ZoznamVakcin} from "../../models/vakcina.model";
 import {ZoznamOsob} from "../../models/osoba.model";
-import {OsobaServiceService} from "../../../osoba-service.service";
-import {VakcinaServiceService} from "../../../vakcina-service.service";
+import {OsobaServiceService} from "../../../Service/osoba-service.service";
+import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 
 @Component({
   selector: 'app-ockovanost-stranka',
