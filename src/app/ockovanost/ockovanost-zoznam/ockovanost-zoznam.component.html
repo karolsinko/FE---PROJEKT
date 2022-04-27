@@ -13,11 +13,14 @@
         <th>Dátum očkovania</th>
       </tr>
       <tbody>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <tr *ngFor="let o of ockovanie">
+      <td>{{o.id}}</td>
+      <td>{{ o.meno }}</td>
+      <td>{{ o.priezvisko }}</td>
+      <td>{{ o.rodCislo }}</td>
+      <td>{{ o.nazov }}</td>
+        <td>{{ o.datumOckovania }}</td>
+      <td>
       <button><i class="bi bi-arrow-clockwise"></i>Uprav</button>
           <button><i class="bi bi-backspace-fill"></i>Vymaž</button>
       </tbody>
