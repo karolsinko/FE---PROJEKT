@@ -7,19 +7,17 @@
     <form [formGroup]="zoznam">
     <table class="table">
       <tr>
-        <th>ID</th>
+        <th>ID očkovanosti</th>
         <th>ID osoby</th>
         <th>ID vakcíny</th>
         <th>Platnosť OD</th>
-        <th>Platnosť DO</th>
       </tr>
       <tbody>
       <tr *ngFor="let o of ockovania">
         <td>{{ o.id}}</td>
         <td>{{ o.osobaId }}</td>
         <td>{{ o.vakcinaId }}</td>
-        <td>{{ o.timeStampZac }}</td>
-        <td>{{ o.timeStampKon }}</td>
+        <td>{{ o.datumOckovania }}</td>
       </tbody>
     </table>
     </form>
