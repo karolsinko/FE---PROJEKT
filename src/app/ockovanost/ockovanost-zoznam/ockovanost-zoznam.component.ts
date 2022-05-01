@@ -17,8 +17,7 @@ export class OckovanostZoznamComponent {
       id: new FormControl(null),
       idOsoba: new FormControl(null),
       idVakcina: new FormControl(null),
-      timeStampZac: new FormControl(null),
-      timeStampKon: new FormControl(null)
+      datumOckovania: new FormControl(null),
     });
   }
 
@@ -26,8 +25,7 @@ export class OckovanostZoznamComponent {
     this.zoznam.controls['id'].setValue(ockovanost.id)
     this.zoznam.controls['idOsoba'].setValue(osoba.id)
     this.zoznam.controls['idVakcina'].setValue(vakcina.id)
-    this.zoznam.controls['timeStampZac'].setValue(ockovanost.timeStampZac)
-    this.zoznam.controls['timeStampKon'].setValue(ockovanost.timeStampKon)
+    this.zoznam.controls['datumOckovania'].setValue(ockovanost.datumOckovania)
   }
 
   @Input()
