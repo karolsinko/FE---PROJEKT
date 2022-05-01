@@ -2,7 +2,7 @@ export class Vakcina{
 
   id?: number;
   nazov: string;
-  pocetDavok: string;
+  pocetDavok: number;
 
   constructor(vakcina: Vakcina) {
     this.id = vakcina.id;
@@ -14,7 +14,7 @@ export class Vakcina{
 export class ZoznamVakcin {
   id?: number;
   nazov: string;
-  pocetDavok: string;
+  pocetDavok: number;
 
   constructor(vakcina: ZoznamVakcin) {
     this.id = vakcina.id;
