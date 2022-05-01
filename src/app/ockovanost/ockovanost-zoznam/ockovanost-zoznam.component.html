@@ -4,7 +4,6 @@
 </head>
 <div class="wrapper">
   <section>
-    <form [formGroup]="zoznam">
     <table class="table">
       <tr>
         <th>ID očkovanosti</th>
@@ -20,7 +19,6 @@
         <td>{{ o.datumOckovania }}</td>
       </tbody>
     </table>
-    </form>
     <mat-paginator [length]="100"
                    [pageSize]="5"
                    [pageSizeOptions]="[5, 10, 25, 100]"
