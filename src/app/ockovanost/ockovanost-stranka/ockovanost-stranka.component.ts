@@ -7,6 +7,7 @@ import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
 import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
 
+
 @Component({
   selector: 'app-ockovanost-stranka',
   templateUrl: './ockovanost-stranka.component.html',
@@ -79,4 +80,5 @@ export class OckovanostStrankaComponent implements OnInit {
       });
     }
   }
+
 }

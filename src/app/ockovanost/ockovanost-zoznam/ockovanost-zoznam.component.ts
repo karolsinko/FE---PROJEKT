@@ -1,9 +1,11 @@
+
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ZoznamVakcin} from "../../models/vakcina.model";
 import {ZoznamOsob} from "../../models/osoba.model";
 import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
 import {Router} from "@angular/router";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
+
 
 @Component({
   selector: 'app-ockovanost-zoznam',
