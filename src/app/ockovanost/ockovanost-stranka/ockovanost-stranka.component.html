@@ -14,7 +14,13 @@
           <button class="btn btn--action"(click)="chodSpat()"><span>Späť</span></button>
         </div>
         <div class='card-body'>
-         <app-ockovanost-zoznam [ockovania]="ockovania">
+          <app-ockovanost-formular [osoby]="osoby"
+                                   [vakciny]="vakciny">
+
+          </app-ockovanost-formular>
+         <app-ockovanost-zoznam [ockovania]="ockovania"
+                                (upravOckovanost)="upravZoZoznamu($event)"
+                                (vymazOckovanost)="zmazZoZoznamu($event)">
          </app-ockovanost-zoznam>
         </div>
       </div>
