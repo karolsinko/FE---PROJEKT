@@ -39,7 +39,7 @@ $(document).ready(function () {
 <div class='dashboard'>
   <div class="dashboard-nav">
     <header><a class="menu-toggle"><i class="fas fa-bars"></i></a>
-      <a class="brand-logo"><i class="bi bi-heart-pulse"></i><span>| EVIDENCIA</span></a></header>
+      <a (click)="openMenu(menu.HOME)" class="brand-logo"><i class="bi bi-heart-pulse"></i><span>| EVIDENCIA</span></a></header>
     <nav class="dashboard-nav-list">
       <a (click)="openMenu(menu.VAKCINA)" class="dashboard-nav-item"><i class="bi bi-eyedropper"></i> |  Vakcína</a>
       <a (click)="openMenu(menu.OSOBA)" class="dashboard-nav-item"><i class="bi bi-person"></i> |  Osoba</a>
