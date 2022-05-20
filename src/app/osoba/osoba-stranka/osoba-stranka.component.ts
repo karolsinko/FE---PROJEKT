@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {Osoba, ZoznamOsob} from '../../models/osoba.model';
-import {OsobaServiceService} from "../../../osoba-service.service";
+import {OsobaServiceService} from "../../../Service/osoba-service.service";
 
 @Component({
   templateUrl: './osoba-stranka.component.html',

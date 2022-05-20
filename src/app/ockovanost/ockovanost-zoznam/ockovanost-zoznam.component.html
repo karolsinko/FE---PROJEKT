@@ -6,23 +6,22 @@
   <section>
     <table class="table">
       <tr>
-        <th>Meno</th>
-        <th>Priezvisko</th>
-        <th>Rodné číslo</th>
-        <th>Názov vakcíny</th>
-        <th>Dátum očkovania</th>
+        <th>ID očkovanosti</th>
+        <th>ID osoby</th>
+        <th>ID vakcíny</th>
+        <th>Platnosť OD</th>
       </tr>
       <tbody>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <tr *ngFor="let o of ockovania">
+        <td>{{ o.id}}</td>
+        <td>{{ o.osobaId }}</td>
+        <td>{{ o.vakcinaId }}</td>
+        <td>{{ o.datumOckovania }}</td>
       <button class="btn btn--action"><span class="uprav">Uprav</span></button>
           <button  class="btn btn--action"><span class="vymaz">Vymaž</span></button>
+
       </tbody>
     </table>
-
     <mat-paginator [length]="100"
                    [pageSize]="5"
                    [pageSizeOptions]="[5, 10, 25, 100]"
