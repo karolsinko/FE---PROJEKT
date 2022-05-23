@@ -7,7 +7,6 @@ import {FormControl, FormGroup} from '@angular/forms';
   selector: 'app-osoba-formular',
   templateUrl: './osoba-formular.component.html',
   styleUrls: ['./osoba-formular.component.css']
-
 })
 export class OsobaFormularComponent {
 

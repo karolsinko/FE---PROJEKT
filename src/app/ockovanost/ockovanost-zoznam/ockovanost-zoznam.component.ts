@@ -1,11 +1,6 @@
 
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ZoznamVakcin} from "../../models/vakcina.model";
-import {ZoznamOsob} from "../../models/osoba.model";
-import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
-import {Router} from "@angular/router";
-import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
-
+import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 
 @Component({
   selector: 'app-ockovanost-zoznam',
@@ -14,16 +9,10 @@ import {OckovanostServiceService} from "../../../Service/ockovanost-service.serv
 })
 export class OckovanostZoznamComponent {
 
-  ockovanostNaUpravu?: Ockovanost;
-
-  constructor(private router: Router, private ockovanostService: OckovanostServiceService) { }
+  constructor() { }
 
   @Input()
-  public vakciny: ZoznamVakcin[] = [];
-  @Input()
-  public osoby: ZoznamOsob[] = [];
-  @Input()
-  public ockovania: ZoznamOckovanosti[] = [];
+  ockovania: ZoznamOckovanosti[] = [];
 
   @Output()
   upravOckovanost: EventEmitter<number> = new EventEmitter<number>();

@@ -1,4 +1,3 @@
-
 import {Osoba} from "./osoba.model";
 import {Vakcina} from "./vakcina.model";
 

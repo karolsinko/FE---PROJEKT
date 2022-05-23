@@ -19,7 +19,7 @@ export class OckovanostStrankaComponent implements OnInit {
 
   vakciny: ZoznamVakcin[] = [];
   osoby: ZoznamOsob[] = [];
-  ockovania: ZoznamOckovanosti[] = [];
+  ockovania: Ockovanost[] = [];
 
   ockovanostNaUpravu?: Ockovanost;
 
@@ -29,21 +29,21 @@ export class OckovanostStrankaComponent implements OnInit {
 
   obnovitOsoby(): void {
     this.osobaService.getOsoby().subscribe(data => {
-      console.log('Prislo: ', data);
+      console.log('Prislo osoby: ', data);
       this.osoby = data;
     });
   }
 
   obnovitVakciny(): void {
     this.vakcinaService.getVakciny().subscribe(data => {
-      console.log('Prislo: ', data);
+      console.log('Prislo vakciny: ', data);
       this.vakciny = data;
     });
   }
 
   obnovitOckovanie(): void {
     this.ockovanostService.getOckovanosti().subscribe(data => {
-      console.log('Prislo: ', data);
+      console.log('Prislo ockovania: ', data);
       this.ockovania = data;
     });
   }
