@@ -39,7 +39,7 @@ export class OsobaStrankaComponent {
 
   uprav(osoba: Osoba): void {
     if(osoba.id !== undefined){
-      this.osobaService.updateOsoba(osoba.id, osoba).subscribe(data =>{
+      this.osobaService.updateOsoba(osoba.id, osoba).subscribe(() =>{
         this.obnovitOsoby();
       });
     }
@@ -53,7 +53,7 @@ export class OsobaStrankaComponent {
 
   zmazZoZoznamu(osobaId: number): void {
     if(confirm('Naozaj chces zmazat?')){
-      this.osobaService.deleteOsoba(osobaId).subscribe(data =>{
+      this.osobaService.deleteOsoba(osobaId).subscribe(() =>{
         this.obnovitOsoby();
       });
     }

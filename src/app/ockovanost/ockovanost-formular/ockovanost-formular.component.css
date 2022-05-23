@@ -1,0 +1,257 @@
+/* TABULKY
+ --------------------------------------------
+*/
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+table{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+td{
+  border:0;
+  width: 150px;
+}
+th{
+  border:0;
+  width: 150px;
+  color: white;
+}
+/* TEXTY
+ --------------------------------------------
+*/
+h1{
+  text-align: center;
+  color: white;
+  display: inline;
+  letter-spacing: 3px;
+}
+
+h1:hover {
+  color: #D6C4EC;
+}
+
+p{
+  text-align: left;
+  color: navajowhite;
+  display:inline;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+p:hover {
+  color: white;
+}
+/* TLACIDLA
+ --------------------------------------------
+*/
+button{
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  width: 100px;
+  padding: 5px;
+  border-radius: 1.5rem;
+  background-color: navajowhite;
+  transition: all .5s ease 0s;
+  box-shadow: 0 6px black;
+}
+
+span{
+  display: inline-block;
+  color: #353084;
+  position: relative;
+  transition: all .5s ease;
+}
+.pridaj::before,.uprav::before,.vymaz::before{
+  font-family: "Font Awesome 5 Free";
+  color: #353084;
+  font-weight: 900;
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 1.5rem;
+  opacity: 0;
+  transition: all .1s ease 0s;
+}
+.pridaj::before{
+  content: '\f055';
+}
+.uprav::before{
+  content: '\f304';
+}
+.vymaz::before{
+  content: '\f1f8';
+}
+button:hover{
+  box-shadow: 0 6px white;
+
+}
+button:hover span{
+  padding-left: 2rem;
+}
+
+button:hover span:before{
+  left: 0;
+  opacity: 1;
+}
+
+button:active {
+
+  transform: translateY(5px);
+}
+
+/* LAYOUT
+ --------------------------------------------
+*/
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  width: 960px;
+  text-align: center;
+  color: white;
+  letter-spacing: 3px;
+  font-size: 35px;
+}
+nav {
+  width: 960px;
+  margin-right: 10px;
+}
+
+section {
+  width: 960px;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #D6C4EC;
+  color: #FFF;
+  text-align: center;
+  margin: 0;
+}
+
+header,
+nav,
+section {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+header {
+  padding: 20px 0;
+}
+/* VSTUP - INPUTY
+ --------------------------------------------
+*/
+
+
+.bi{
+  float:left;
+}
+.group        {
+  position:relative;
+  margin-bottom:45px;
+  margin-left: 45px;
+}
+input         {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid white;
+  background-color: #353084;
+  color: navajowhite;
+}
+input:focus     { outline:none; color:navajowhite }
+
+/* LABEL ======================================= */
+label          {
+  color: navajowhite;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label    {
+  top:-30px;
+  font-size:20px;
+  color:white;
+}
+
+/* BOTTOM BARS ================================= */
+.bar  { position:relative; display:block; width:300px; }
+.bar:before, .bar:after   {
+  content:'';
+  height:3px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:navajowhite;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+
+

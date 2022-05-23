@@ -18,17 +18,6 @@ export class OckovanostZoznamComponent {
 
   constructor(private router: Router, private ockovanostService: OckovanostServiceService) { }
 
-  ngOnInit(): void {
-    this.obnovitOckovania();
-  }
-
-  obnovitOckovania(): void {
-    this.ockovanostService.getOckovanosti().subscribe(data => {
-      console.log('Prislo: ', data);
-      this.ockovania = data;
-    });
-  }
-
   @Input()
   public vakciny: ZoznamVakcin[] = [];
   @Input()

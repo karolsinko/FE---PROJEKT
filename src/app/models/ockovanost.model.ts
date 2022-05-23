@@ -14,19 +14,8 @@ export class Ockovanost{
     this.id = id;
     this.osoba = osoba;
     this.vakcina = vakcina;
-
-  osobaId: number;
-  vakcinaId: number;
-  datumOckovania: string;
-
-  constructor(id: number, osobaId: number, vakcinaId: number,datumOckovania: string) {
-    this.id = id;
-    this.osobaId = osobaId;
-    this.vakcinaId = vakcinaId;
-
     this.datumOckovania = datumOckovania;
   }
-
 }
 
 export class ZoznamOckovanosti{
@@ -41,17 +30,6 @@ export class ZoznamOckovanosti{
     this.id = id;
     this.osoba = osoba;
     this.vakcina = vakcina;
-
-  osobaId: number;
-  vakcinaId: number;
-  datumOckovania: string;
-
-  constructor(id: number, osobaId: number, vakcinaId: number,datumOckovania: string) {
-    this.id = id;
-    this.osobaId = osobaId;
-    this.vakcinaId = vakcinaId;
-
     this.datumOckovania = datumOckovania;
   }
-
 }

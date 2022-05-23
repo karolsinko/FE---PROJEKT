@@ -15,13 +15,15 @@
         </div>
         <div class='card-body'>
 
-          <app-ockovanost-formular [osoby]="osoby"
-                                   [vakciny]="vakciny">
-
+          <app-ockovanost-formular [ockovania]="ockovania">
           </app-ockovanost-formular>
+
          <app-ockovanost-zoznam [ockovania]="ockovania"
+                                [osoby]="osoby"
+                                [vakciny]="vakciny"
                                 (upravOckovanost)="upravZoZoznamu($event)"
                                 (vymazOckovanost)="zmazZoZoznamu($event)">
+           </app-ockovanost-zoznam>
         </div>
       </div>
     </div>

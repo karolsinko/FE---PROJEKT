@@ -1,1 +1,46 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <title></title>
+</head>
+<section>
 
+  <form [formGroup]="form">
+
+    <table class="table">
+      <tr>
+      <td><div class="group">
+        <input type="text">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>ID očkovanosti</label>
+      </div></td>
+
+      <td><div class="group">
+        <input type="text">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>ID osoby</label>
+      </div></td>
+      </tr>  <tr>
+      <td><div class="group">
+        <input type="text">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>ID vakcíny</label>
+      </div></td>
+
+      <td><div class="group">
+        <input type="text">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Platnosť OD</label>
+      </div></td>
+      </tr>
+      <!-- <td><button class="btn btn--action"(click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button>-->
+         <button class="btn btn--action"(click)="uprav()" *ngIf="form.value.id !== null" ><span class="uprav">Uprav</span></button><br>
+        <!-- <button class="btn btn--action"(click)="zrus()"><span class="vymaz">Vymaž</span></button></td> -->
+    </table>
+
+  </form>
+
+</section>

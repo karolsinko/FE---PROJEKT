@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {ZoznamVakcin} from "../../models/vakcina.model";
-import {Osoba, ZoznamOsob} from "../../models/osoba.model";
+import {ZoznamOsob} from "../../models/osoba.model";
 import {OsobaServiceService} from "../../../Service/osoba-service.service";
 import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
@@ -17,11 +17,11 @@ export class OckovanostStrankaComponent implements OnInit {
 
   constructor(private router: Router, private osobaService: OsobaServiceService, private vakcinaService: VakcinaServiceService, private ockovanostService: OckovanostServiceService) { }
 
-  ockovanostNaUpravu?: Ockovanost;
-
   vakciny: ZoznamVakcin[] = [];
   osoby: ZoznamOsob[] = [];
   ockovania: ZoznamOckovanosti[] = [];
+
+  ockovanostNaUpravu?: Ockovanost;
 
   chodSpat(): void {
     this.router.navigate(['']);
@@ -67,6 +67,7 @@ export class OckovanostStrankaComponent implements OnInit {
       });
     }
   }
+
   upravZoZoznamu(ockovanostId: number): void {
     this.ockovanostService.getOckovanost(ockovanostId).subscribe(data =>{
       this.ockovanostNaUpravu = data;
