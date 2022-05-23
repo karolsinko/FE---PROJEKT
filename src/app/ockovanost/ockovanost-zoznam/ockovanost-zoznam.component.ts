@@ -1,7 +1,11 @@
-import {Component, Input} from '@angular/core';
+
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ZoznamVakcin} from "../../models/vakcina.model";
 import {ZoznamOsob} from "../../models/osoba.model";
-import {ZoznamOckovanosti} from "../../models/ockovanost.model";
+import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
+import {Router} from "@angular/router";
+import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
+
 
 @Component({
   selector: 'app-ockovanost-zoznam',
@@ -10,12 +14,40 @@ import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 })
 export class OckovanostZoznamComponent {
 
-  @Input()
-  vakciny: ZoznamVakcin[] = [];
-  @Input()
-  osoby: ZoznamOsob[] = [];
-  @Input()
-  ockovania: ZoznamOckovanosti[] = [];
+  ockovanostNaUpravu?: Ockovanost;
 
+  constructor(private router: Router, private ockovanostService: OckovanostServiceService) { }
+
+  ngOnInit(): void {
+    this.obnovitOckovania();
+  }
+
+  obnovitOckovania(): void {
+    this.ockovanostService.getOckovanosti().subscribe(data => {
+      console.log('Prislo: ', data);
+      this.ockovania = data;
+    });
+  }
+
+  @Input()
+  public vakciny: ZoznamVakcin[] = [];
+  @Input()
+  public osoby: ZoznamOsob[] = [];
+  @Input()
+  public ockovania: ZoznamOckovanosti[] = [];
+
+  @Output()
+  upravOckovanost: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  vymazOckovanost: EventEmitter<number> = new EventEmitter<number>();
+
+  uprav(ockovanostId?: number): void {
+    this.upravOckovanost.emit(ockovanostId);
+  }
+
+  zmaz(ockovanostId?: number): void {
+    this.vymazOckovanost.emit(ockovanostId);
+  }
 
 }

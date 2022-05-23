@@ -26,6 +26,7 @@ import { OckovanostFormularComponent } from './ockovanost/ockovanost-formular/oc
 import { OckovanostStrankaComponent } from './ockovanost/ockovanost-stranka/ockovanost-stranka.component';
 import { OckovanostZoznamComponent } from './ockovanost/ockovanost-zoznam/ockovanost-zoznam.component';
 import {MatIconModule} from "@angular/material/icon";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {MatIconModule} from "@angular/material/icon";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,

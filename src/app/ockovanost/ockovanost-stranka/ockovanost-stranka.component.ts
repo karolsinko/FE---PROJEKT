@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {ZoznamVakcin} from "../../models/vakcina.model";
-import {ZoznamOsob} from "../../models/osoba.model";
+import {Osoba, ZoznamOsob} from "../../models/osoba.model";
 import {OsobaServiceService} from "../../../Service/osoba-service.service";
 import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
-import {ZoznamOckovanosti} from "../../models/ockovanost.model";
+import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
+
 
 @Component({
   selector: 'app-ockovanost-stranka',
@@ -15,6 +16,8 @@ import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 export class OckovanostStrankaComponent implements OnInit {
 
   constructor(private router: Router, private osobaService: OsobaServiceService, private vakcinaService: VakcinaServiceService, private ockovanostService: OckovanostServiceService) { }
+
+  ockovanostNaUpravu?: Ockovanost;
 
   vakciny: ZoznamVakcin[] = [];
   osoby: ZoznamOsob[] = [];
@@ -50,4 +53,32 @@ export class OckovanostStrankaComponent implements OnInit {
     this.obnovitVakciny();
     this.obnovitOckovanie();
   }
+
+  pridaj(ockovanost: Ockovanost): void {
+    this.ockovanostService.createOckovanost(ockovanost).subscribe(data => {
+      this.obnovitOckovanie();
+    });
+  }
+
+  uprav(ockovanost: Ockovanost): void {
+    if(ockovanost.id !== undefined){
+      this.ockovanostService.updateOckovanost(ockovanost.id, ockovanost).subscribe(data =>{
+        this.obnovitOckovanie();
+      });
+    }
+  }
+  upravZoZoznamu(ockovanostId: number): void {
+    this.ockovanostService.getOckovanost(ockovanostId).subscribe(data =>{
+      this.ockovanostNaUpravu = data;
+    });
+  }
+
+  zmazZoZoznamu(ockovanostId: number): void {
+    if(confirm('Naozaj chces zmazat?')){
+      this.ockovanostService.deleteOckovanost(ockovanostId).subscribe(data =>{
+        this.obnovitOckovanie();
+      });
+    }
+  }
+
 }
