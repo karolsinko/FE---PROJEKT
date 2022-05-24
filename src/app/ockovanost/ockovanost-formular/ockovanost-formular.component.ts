@@ -39,8 +39,8 @@ export class OckovanostFormularComponent{
 
   private fillForm(ockovanost: Ockovanost): void {
     this.form.controls['id'].setValue(ockovanost.id)
-    this.form.controls['osoba'].setValue(ockovanost.osoba.id)
-    this.form.controls['vakcina'].setValue(ockovanost.vakcina.id)
+    this.form.controls['osobaId'].setValue(ockovanost.osobaId)
+    this.form.controls['vakcinaId'].setValue(ockovanost.vakcinaId)
     this.form.controls['datum'].setValue(ockovanost.datum)
   }
 /*

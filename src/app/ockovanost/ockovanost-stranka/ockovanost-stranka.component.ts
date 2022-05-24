@@ -45,7 +45,6 @@ export class OckovanostStrankaComponent implements OnInit {
     this.ockovanostService.getOckovanosti().subscribe(data => {
       console.log('Prislo ockovania: ', data);
       this.ockovania = data;
-      console.log(this.ockovania[0].osoba.id);
     });
   }
 
