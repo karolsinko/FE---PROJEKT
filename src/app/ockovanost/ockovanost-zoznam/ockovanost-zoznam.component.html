@@ -6,19 +6,16 @@
   <section>
     <table class="table">
       <tr>
-        <th>Meno</th>
-        <th>Priezvisko</th>
-        <th>Rodné číslo</th>
-        <th>Názov vakcíny</th>
+        <th>ID očkovanosti</th>
+        <th>ID osoby</th>
+        <th>ID vakciny</th>
         <th>Dátum očkovania</th>
       </tr>
       <tbody>
       <tr *ngFor="let o of ockovania">
       <td>{{o.id}}</td>
-      <td>{{ o.meno }}</td>
-      <td>{{ o.priezvisko }}</td>
-      <td>{{ o.rodCislo }}</td>
-      <td>{{ o.nazov }}</td>
+      <td>{{ o.osoba }}</td>
+      <td>{{ o.vakcina }}</td>
         <td>{{ o.datumOckovania }}</td>
       <td>
       <button><i class="bi bi-arrow-clockwise"></i>Uprav</button>

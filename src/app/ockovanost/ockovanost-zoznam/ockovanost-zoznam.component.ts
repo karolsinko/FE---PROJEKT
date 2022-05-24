@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {OckovanieZoznam} from "../../models/ockovanie.model";
+import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 
 @Component({
   selector: 'app-ockovanost-zoznam',
@@ -9,7 +9,7 @@ import {OckovanieZoznam} from "../../models/ockovanie.model";
 export class OckovanostZoznamComponent{
 
   @Input()
-  ockovania: OckovanieZoznam[] = [];
+  ockovania: ZoznamOckovanosti[] = [];
 
   @Output()
   upravOckovanie: EventEmitter<number> = new EventEmitter<number>();

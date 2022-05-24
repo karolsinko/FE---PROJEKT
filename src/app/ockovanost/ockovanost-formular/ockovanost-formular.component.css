@@ -1,15 +1,16 @@
 /* TABULKY
  --------------------------------------------
 */
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 table{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+
 }
 td{
-  border: 0;
+  border:0;
   width: 150px;
-  color: white;
 }
 th{
   border:0;
@@ -107,7 +108,7 @@ button:active {
  --------------------------------------------
 */
 .wrapper {
-  width: 960px;
+  width: 900px;
   margin: 0 auto;
 }
 
@@ -150,17 +151,20 @@ section {
 header {
   padding: 20px 0;
 }
+/* VSTUP - INPUTY
+ --------------------------------------------
+*/
 
 
 .bi{
-  float: left;
+  float:left;
 }
-
 .group        {
   position:relative;
   margin-bottom:45px;
+  margin-left: 45px;
 }
-input         {
+select       {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -170,7 +174,8 @@ input         {
   background-color: #353084;
   color: navajowhite;
 }
-input:focus     { outline:none; color:navajowhite }
+select:focus     { outline:none; color:navajowhite }
+
 
 /* LABEL ======================================= */
 label          {
@@ -187,7 +192,7 @@ label          {
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label    {
+select:focus ~ label, option:valid ~ label    {
   top:-30px;
   font-size:20px;
   color:white;
@@ -214,7 +219,7 @@ input:focus ~ label, input:valid ~ label    {
 }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+select:focus ~ .bar:before, select:focus ~ .bar:after {
   width:50%;
 }
 
@@ -230,22 +235,24 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
+select:focus ~ .highlight {
+  -webkit-animation:selectHighlighter 0.3s ease;
+  -moz-animation:selectHighlighter 0.3s ease;
+  animation:selectHighlighter 0.3s ease;
 }
 
 /* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
+@-webkit-keyframes selectHighlighter {
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
 }
-@-moz-keyframes inputHighlighter {
+@-moz-keyframes selectHighlighter {
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
 }
-@keyframes inputHighlighter {
+@keyframes selectHighlighter {
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
 }
+
+
