@@ -16,6 +16,7 @@
         <div class='card-body'>
 
           <app-ockovanost-formular [ockovanost]="ockovanostNaUpravu"
+                                   [ockovania]="ockovania"
                                    (pridajOckovanie)="pridaj($event)"
                                    (upravOckovanost)="uprav($event)">
           </app-ockovanost-formular>

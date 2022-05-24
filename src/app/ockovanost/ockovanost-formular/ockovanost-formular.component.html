@@ -13,6 +13,9 @@
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>ID očkovanosti</label>
+          <select class="form-control col-lg-8">
+            <option *ngFor="let o of ockovania">{{o.id}}</option>
+          </select>
         </div></td>
 
         <td><div class="group">
@@ -20,14 +23,20 @@
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>ID osoby</label>
-
+          <select class="form-control col-lg-8">
+            <option *ngFor="let o of ockovania">{{o.osobaId}}</option>
+          </select>
         </div></td>
+
       </tr>  <tr>
       <td><div class="group">
         <input type="text" formControlName="vakcina" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>ID vakcíny</label>
+        <select class="form-control col-lg-8">
+          <option *ngFor="let o of ockovania">{{o.vakcinaId}}</option>
+        </select>
       </div></td>
 
       <td><div class="group">
@@ -35,6 +44,9 @@
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Platnosť OD</label>
+        <select class="form-control col-lg-8">
+          <option *ngFor="let o of ockovania">{{o.datum}}</option>
+        </select>
       </div></td>
 
       <td><button class="btn btn--action" (click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button>

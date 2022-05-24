@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Ockovanost} from "../../models/ockovanost.model";
+import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,9 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./ockovanost-formular.component.css']
 })
 export class OckovanostFormularComponent{
+
+  @Input()
+  ockovania: ZoznamOckovanosti[] = [];
 
   @Input()
   set ockovanost(data: Ockovanost | undefined){
