@@ -2,14 +2,19 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 
+
 @Component({
   selector: 'app-ockovanost-zoznam',
   templateUrl: './ockovanost-zoznam.component.html',
   styleUrls: ['./ockovanost-zoznam.component.css']
 })
+
 export class OckovanostZoznamComponent {
 
-  constructor() { }
+
+  @Input()
+  ockovania: OckovanieZoznam[] = [];
+
 
   @Input()
   ockovania: ZoznamOckovanosti[] = [];

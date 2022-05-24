@@ -6,11 +6,11 @@ table{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-
 }
 td{
   border:0;
   width: 150px;
+
 }
 th{
   border:0;
@@ -163,6 +163,7 @@ header {
   position:relative;
   margin-bottom:45px;
   margin-left: 45px;
+
 }
 input         {
   font-size:18px;
@@ -253,5 +254,4 @@ input:focus ~ .highlight {
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
 }
-
 

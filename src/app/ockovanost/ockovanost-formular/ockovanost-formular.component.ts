@@ -1,12 +1,15 @@
+
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Ockovanost} from "../../models/ockovanost.model";
 import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-ockovanost-formular',
   templateUrl: './ockovanost-formular.component.html',
   styleUrls: ['./ockovanost-formular.component.css']
 })
+
 export class OckovanostFormularComponent{
 
   @Input()
@@ -37,6 +40,7 @@ export class OckovanostFormularComponent{
     this.form.controls['osobaId'].setValue(ockovanost.osoba.id)
     this.form.controls['vakcinaId'].setValue(ockovanost.vakcina.id)
     this.form.controls['datumOckovania'].setValue(ockovanost.datumOckovania)
+
   }
 
   public pridaj(): void {
@@ -54,3 +58,4 @@ export class OckovanostFormularComponent{
     this.form.reset();
   }
 }
+

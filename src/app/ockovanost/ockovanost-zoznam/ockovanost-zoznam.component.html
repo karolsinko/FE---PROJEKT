@@ -13,6 +13,7 @@
       </tr>
       <tbody>
       <tr *ngFor="let o of ockovania">
+
         <td>{{ o.id}}</td>
         <td>{{ o.osoba?.id }}</td>
         <td>{{ o.vakcina?.id }}</td>
@@ -21,7 +22,6 @@
           <button class="btn btn--action" (click)="uprav(o.id)"><span class="uprav">Uprav</span></button>
           <button class="btn btn--action" (click)="zmaz(o.id)"><span class="vymaz">Vymaž</span></button>
         </td>
-
       </tbody>
     </table>
     <mat-paginator [length]="100"
