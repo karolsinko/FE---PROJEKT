@@ -13,12 +13,11 @@
     <tbody>
     <tr *ngFor="let v of vakciny">
       <td>{{ v.nazov }}</td>
-      <td>{{ v.pocetDavok }}</td>
+      <td>{{ v.pocet_davok }}</td>
       <td>
         <button class="btn btn--action" (click)="uprav(v.id)"><span class="uprav">Uprav</span></button>
         <button class="btn btn--action" (click)="zmaz(v.id)"><span class="vymaz">Vymaž</span></button>
       </td>
-
     </tr>
 
     </tbody>

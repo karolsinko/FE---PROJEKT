@@ -11,17 +11,21 @@
       <div class='card'>
         <div class='card-header'>
           <i class="bi bi-clipboard-heart"></i><h1>Evidencia očkovanosti</h1>
-          <button class="btn btn--action"(click)="chodSpat()"><span>Späť</span></button>
+          <button class="btn btn--action" (click)="chodSpat()"><span>Späť</span></button>
         </div>
         <div class='card-body'>
 
-          <app-ockovanost-formular [osoby]="osoby"
-                                   [vakciny]="vakciny">
-
+          <app-ockovanost-formular [ockovanost]="ockovanostNaUpravu"
+                                   [osoby]="osoby"
+                                   [vakciny]="vakciny"
+                                   (pridajOckovanie)="pridaj($event)"
+                                   (upravOckovanost)="uprav($event)">
           </app-ockovanost-formular>
+
          <app-ockovanost-zoznam [ockovania]="ockovania"
                                 (upravOckovanost)="upravZoZoznamu($event)"
                                 (vymazOckovanost)="zmazZoZoznamu($event)">
+           </app-ockovanost-zoznam>
         </div>
       </div>
     </div>
