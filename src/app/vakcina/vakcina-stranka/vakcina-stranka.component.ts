@@ -22,8 +22,9 @@ export class VakcinaStrankaComponent implements OnInit{
 
   obnovitVakciny(): void {
     this.vakcinaService.getVakciny().subscribe(data => {
-      console.log('Prislo: ', data);
+      console.log('Prislox: ', data);
       this.vakciny = data;
+      console.log("Poc dav: " + this.vakciny[0].pocet_davok);
     });
   }
 

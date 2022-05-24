@@ -7,13 +7,13 @@ export class Ockovanost{
 
   osoba: Osoba;
   vakcina: Vakcina;
-  datum_ockovania: string;
+  datum: string;
 
-  constructor(id: number, osoba: Osoba, vakcina: Vakcina,datum_ockovania: string) {
+  constructor(id: number, osoba: Osoba, vakcina: Vakcina,datum: string) {
     this.id = id;
     this.osoba = osoba;
     this.vakcina = vakcina;
-    this.datum_ockovania = datum_ockovania;
+    this.datum = datum;
   }
 }
 
@@ -23,12 +23,12 @@ export class ZoznamOckovanosti{
 
   osoba: Osoba;
   vakcina: Vakcina;
-  datum_ockovania: string;
+  datum: string;
 
-  constructor(id: number, osoba: Osoba, vakcina: Vakcina,datum_ockovania: string) {
+  constructor(id: number, osoba: Osoba, vakcina: Vakcina,datum: string) {
     this.id = id;
     this.osoba = osoba;
     this.vakcina = vakcina;
-    this.datum_ockovania = datum_ockovania;
+    this.datum = datum;
   }
 }

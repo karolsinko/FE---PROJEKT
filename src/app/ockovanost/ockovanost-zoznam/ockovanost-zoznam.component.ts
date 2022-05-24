@@ -10,7 +10,6 @@ import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 export class OckovanostZoznamComponent {
 
   constructor() { }
-
   @Input()
   ockovania: ZoznamOckovanosti[] = [];
 

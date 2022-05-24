@@ -19,6 +19,7 @@
         <span class="bar"></span>
         <label>Počet dávok</label>
       </div></td>
+
       <td><button class="btn btn--action"(click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button>
       <button class="btn btn--action"(click)="uprav()" *ngIf="form.value.id !== null" ><span class="uprav">Uprav</span></button><br>
       <button class="btn btn--action"(click)="zrus()"><span class="vymaz">Vymaž</span></button></td>

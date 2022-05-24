@@ -5,30 +5,31 @@
 <div class="wrapper">
   <section>
     <table class="table">
+
       <tr>
         <th>ID očkovanosti</th>
         <th>ID osoby</th>
         <th>ID vakcíny</th>
         <th>Platnosť OD</th>
       </tr>
-      <tbody>
+
       <tr *ngFor="let o of ockovania">
         <td>{{ o.id}}</td>
-        <td>{{ o.osoba?.id }}</td>
-        <td>{{ o.vakcina?.id }}</td>
-        <td>{{ o.datum_ockovania }}</td>
+        <td>{{ o.osoba.id }}</td>
+        <td>{{ o.vakcina.id }}</td>
+        <td>{{ o.datum }}</td>
         <td>
           <button class="btn btn--action" (click)="uprav(o.id)"><span class="uprav">Uprav</span></button>
           <button class="btn btn--action" (click)="zmaz(o.id)"><span class="vymaz">Vymaž</span></button>
         </td>
 
-      </tbody>
     </table>
+    <!--
     <mat-paginator [length]="100"
                    [pageSize]="5"
                    [pageSizeOptions]="[5, 10, 25, 100]"
                    aria-label="Select page">
-    </mat-paginator>
+    </mat-paginator>-->
   </section>
 </div>
 

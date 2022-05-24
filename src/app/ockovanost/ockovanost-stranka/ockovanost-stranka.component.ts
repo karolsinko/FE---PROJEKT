@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {ZoznamVakcin} from "../../models/vakcina.model";
-import {ZoznamOsob} from "../../models/osoba.model";
+import {Vakcina, ZoznamVakcin} from "../../models/vakcina.model";
+import {Osoba, ZoznamOsob} from "../../models/osoba.model";
 import {OsobaServiceService} from "../../../Service/osoba-service.service";
 import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";

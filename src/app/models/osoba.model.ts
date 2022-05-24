@@ -20,16 +20,15 @@ export class Osoba {
     this.pohlavie = osoba.pohlavie;
   }
 }
-
-  export class ZoznamOsob {
-    id?: number;
-    meno: string;
-    priezvisko: string;
-    rok_nar: string;
-    rod_cislo: string;
-    tel_cislo: string;
-    bydlisko: string;
-    pohlavie: string;
+export class ZoznamOsob {
+  id?: number;
+  meno: string;
+  priezvisko: string;
+  rok_nar: string;
+  rod_cislo: string;
+  tel_cislo: string;
+  bydlisko: string;
+  pohlavie: string;
 
 
   constructor(osoba: ZoznamOsob) {
