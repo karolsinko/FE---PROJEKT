@@ -9,11 +9,11 @@ export class Ockovanost{
   vakcina: Vakcina;
   datum: string;
 
-  constructor(id: number, osoba: Osoba, vakcina: Vakcina,datum: string) {
-    this.id = id;
-    this.osoba = osoba;
-    this.vakcina = vakcina;
-    this.datum = datum;
+  constructor(ockovanost: Ockovanost) {
+    this.id = ockovanost.id;
+    this.osoba = ockovanost.osoba;
+    this.vakcina = ockovanost.vakcina;
+    this.datum = ockovanost.datum;
   }
 }
 
@@ -25,10 +25,10 @@ export class ZoznamOckovanosti{
   vakcina: Vakcina;
   datum: string;
 
-  constructor(id: number, osoba: Osoba, vakcina: Vakcina,datum: string) {
-    this.id = id;
-    this.osoba = osoba;
-    this.vakcina = vakcina;
-    this.datum = datum;
+  constructor(ockovanost: ZoznamOckovanosti) {
+    this.id = ockovanost.id;
+    this.osoba = ockovanost.osoba;
+    this.vakcina = ockovanost.vakcina;
+    this.datum = ockovanost.datum;
   }
 }

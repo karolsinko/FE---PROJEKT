@@ -1,8 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Ockovanost} from "../../models/ockovanost.model";
 import { FormControl, FormGroup } from '@angular/forms';
-import {ZoznamVakcin} from "../../models/vakcina.model";
-import {ZoznamOsob} from "../../models/osoba.model";
 
 @Component({
   selector: 'app-ockovanost-formular',
@@ -19,12 +17,6 @@ export class OckovanostFormularComponent{
   }
   form: FormGroup;
 
-  @Input()
-  public osoby: ZoznamOsob[] =  [];
-  @Input()
-  public vakciny: ZoznamVakcin[] =  [];
-  @Input()
-  public ockovanie?: Ockovanost;
 /*
   @Output()
   selectOckovanie = new EventEmitter<Ockovanost>();

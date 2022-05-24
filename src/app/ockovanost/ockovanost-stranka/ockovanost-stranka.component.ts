@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {Vakcina, ZoznamVakcin} from "../../models/vakcina.model";
-import {Osoba, ZoznamOsob} from "../../models/osoba.model";
+import {ZoznamVakcin} from "../../models/vakcina.model";
+import {ZoznamOsob} from "../../models/osoba.model";
 import {OsobaServiceService} from "../../../Service/osoba-service.service";
 import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
-import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
+import {Ockovanost} from "../../models/ockovanost.model";
 
 
 @Component({
@@ -45,6 +45,7 @@ export class OckovanostStrankaComponent implements OnInit {
     this.ockovanostService.getOckovanosti().subscribe(data => {
       console.log('Prislo ockovania: ', data);
       this.ockovania = data;
+      console.log(this.ockovania[0].osoba.id);
     });
   }
 

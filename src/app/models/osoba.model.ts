@@ -30,7 +30,6 @@ export class ZoznamOsob {
   bydlisko: string;
   pohlavie: string;
 
-
   constructor(osoba: ZoznamOsob) {
     this.id = osoba.id;
     this.meno = osoba.meno;
