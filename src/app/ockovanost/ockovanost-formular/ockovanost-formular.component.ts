@@ -26,17 +26,17 @@ export class OckovanostFormularComponent{
   constructor() {
     this.form = new FormGroup({
       id: new FormControl(null),
-      osobaId: new FormControl(null),
-      vakcinaId: new FormControl(null),
-      datumOckovania: new FormControl(null)
+      osoba: new FormControl(null),
+      vakcina: new FormControl(null),
+      datum_ockovania: new FormControl(null)
     });
   }
 
   private fillForm(ockovanost: Ockovanost): void {
     this.form.controls['id'].setValue(ockovanost.id)
-    this.form.controls['osobaId'].setValue(ockovanost.osoba.id)
-    this.form.controls['vakcinaId'].setValue(ockovanost.vakcina.id)
-    this.form.controls['datumOckovania'].setValue(ockovanost.datumOckovania)
+    this.form.controls['osoba'].setValue(ockovanost.osoba.id)
+    this.form.controls['vakcina'].setValue(ockovanost.vakcina.id)
+    this.form.controls['datum_ockovania'].setValue(ockovanost.datum_ockovania)
   }
 
   public pridaj(): void {
