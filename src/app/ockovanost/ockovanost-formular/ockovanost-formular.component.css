@@ -193,7 +193,7 @@ label          {
 }
 
 /* active state */
-.form-control:focus ~ label, option:valid ~ label    {
+.form-control:focus ~ label, .form-control:valid ~ label    {
   top:-30px;
   font-size:20px;
   color:white;
