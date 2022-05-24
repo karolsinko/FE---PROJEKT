@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
 import { FormControl, FormGroup } from '@angular/forms';
+import {ZoznamVakcin} from "../../models/vakcina.model";
+import {ZoznamOsob} from "../../models/osoba.model";
 
 @Component({
   selector: 'app-ockovanost-formular',
@@ -9,6 +11,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class OckovanostFormularComponent{
 
+  @Input()
+  vakciny: ZoznamVakcin[] = [];
+  @Input()
+  osoby: ZoznamOsob[] = [];
   @Input()
   ockovania: ZoznamOckovanosti[] = [];
 
@@ -20,11 +26,6 @@ export class OckovanostFormularComponent{
   }
   form: FormGroup;
 
-/*
-  @Output()
-  selectOckovanie = new EventEmitter<Ockovanost>();
-
- */
   @Output()
   pridajOckovanie = new EventEmitter<Ockovanost>();
 
@@ -34,8 +35,8 @@ export class OckovanostFormularComponent{
   constructor() {
     this.form = new FormGroup({
       id: new FormControl(null),
-      osoba: new FormControl(null),
-      vakcina: new FormControl(null),
+      osobaId: new FormControl(null),
+      vakcinaId: new FormControl(null),
       datum: new FormControl(null)
     });
   }
@@ -46,13 +47,6 @@ export class OckovanostFormularComponent{
     this.form.controls['vakcinaId'].setValue(ockovanost.vakcinaId)
     this.form.controls['datum'].setValue(ockovanost.datum)
   }
-/*
-  public select(): void {
-    this.selectOckovanie.emit(this.form.value);
-    this.form.reset();
-  }
-
- */
 
   public pridaj(): void {
     this.pridajOckovanie.emit(this.form.value);

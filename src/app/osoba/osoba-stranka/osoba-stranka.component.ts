@@ -32,7 +32,7 @@ export class OsobaStrankaComponent {
   }
 
   pridaj(osoba: Osoba): void {
-    this.osobaService.createOsoba(osoba).subscribe(data => {
+    this.osobaService.createOsoba(osoba).subscribe(() => {
       this.obnovitOsoby();
     });
   }

@@ -5,7 +5,7 @@ import {ZoznamOsob} from "../../models/osoba.model";
 import {OsobaServiceService} from "../../../Service/osoba-service.service";
 import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
 import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
-import {Ockovanost} from "../../models/ockovanost.model";
+import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
 
 
 @Component({
@@ -19,7 +19,7 @@ export class OckovanostStrankaComponent implements OnInit {
 
   vakciny: ZoznamVakcin[] = [];
   osoby: ZoznamOsob[] = [];
-  ockovania: Ockovanost[] = [];
+  ockovania: ZoznamOckovanosti[] = [];
 
   ockovanostNaUpravu?: Ockovanost;
 
@@ -55,14 +55,14 @@ export class OckovanostStrankaComponent implements OnInit {
   }
 
   pridaj(ockovanost: Ockovanost): void {
-    this.ockovanostService.createOckovanost(ockovanost).subscribe(data => {
+    this.ockovanostService.createOckovanost(ockovanost).subscribe(() => {
       this.obnovitOckovanie();
     });
   }
 
   uprav(ockovanost: Ockovanost): void {
     if(ockovanost.id !== undefined){
-      this.ockovanostService.updateOckovanost(ockovanost.id, ockovanost).subscribe(data =>{
+      this.ockovanostService.updateOckovanost(ockovanost.id, ockovanost).subscribe(() =>{
         this.obnovitOckovanie();
       });
     }
@@ -76,7 +76,7 @@ export class OckovanostStrankaComponent implements OnInit {
 
   zmazZoZoznamu(ockovanostId: number): void {
     if(confirm('Naozaj chces zmazat?')){
-      this.ockovanostService.deleteOckovanost(ockovanostId).subscribe(data =>{
+      this.ockovanostService.deleteOckovanost(ockovanostId).subscribe(()=>{
         this.obnovitOckovanie();
       });
     }

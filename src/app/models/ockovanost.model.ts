@@ -1,3 +1,6 @@
+import {Osoba} from "./osoba.model";
+import {Vakcina} from "./vakcina.model";
+
 export class Ockovanost{
 
   id?: number;
@@ -5,10 +8,10 @@ export class Ockovanost{
   vakcinaId?: number;
   datum: string;
 
-  constructor(ockovanost: Ockovanost) {
+  constructor(ockovanost: ZoznamOckovanosti, osoba: Osoba, vakcina: Vakcina) {
     this.id = ockovanost.id;
-    this.osobaId = ockovanost.osobaId;
-    this.vakcinaId = ockovanost.vakcinaId;
+    this.osobaId = osoba.id;
+    this.vakcinaId = vakcina.id;
     this.datum = ockovanost.datum;
   }
 }
@@ -20,10 +23,10 @@ export class ZoznamOckovanosti{
   vakcinaId?: number;
   datum: string;
 
-  constructor(ockovanost: ZoznamOckovanosti) {
+  constructor(ockovanost: ZoznamOckovanosti, osoba: Osoba, vakcina: Vakcina) {
     this.id = ockovanost.id;
-    this.osobaId = ockovanost.osobaId;
-    this.vakcinaId = ockovanost.vakcinaId;
+    this.osobaId = osoba.id;
+    this.vakcinaId = vakcina.id;
     this.datum = ockovanost.datum;
   }
 }

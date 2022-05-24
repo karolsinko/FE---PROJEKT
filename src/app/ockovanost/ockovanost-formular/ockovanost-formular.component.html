@@ -9,47 +9,47 @@
     <table class="table">
       <tr>
         <td><div class="group">
-          <input type="text" formControlName="id" required>
+          <input type="text" formControlName="id" >
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>ID očkovanosti</label>
-          <select class="form-control col-lg-8">
+          <select class="form-control col-lg-8" formControlName="id" required>
             <option *ngFor="let o of ockovania">{{o.id}}</option>
           </select>
         </div></td>
 
         <td><div class="group">
-          <input type="text" formControlName="osoba" required>
+          <input type="text" formControlName="osobaId" >
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>ID osoby</label>
-          <select class="form-control col-lg-8">
-            <option *ngFor="let o of ockovania">{{o.osobaId}}</option>
+          <select class="form-control col-lg-8" formControlName="osobaId" required>
+            <option *ngFor="let o of osoby">{{o.id}}</option>
           </select>
         </div></td>
 
       </tr>  <tr>
       <td><div class="group">
-        <input type="text" formControlName="vakcina" required>
+        <input type="text" formControlName="vakcinaId" >
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>ID vakcíny</label>
-        <select class="form-control col-lg-8">
-          <option *ngFor="let o of ockovania">{{o.vakcinaId}}</option>
+        <select class="form-control col-lg-8" formControlName="vakcinaId" required>
+          <option *ngFor="let o of vakciny">{{o.id}}</option>
         </select>
       </div></td>
 
       <td><div class="group">
-        <input type="text" formControlName="datum" required>
+        <input type="text" formControlName="datum" >
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Platnosť OD</label>
-        <select class="form-control col-lg-8">
+        <select class="form-control col-lg-8" formControlName="datum" required>
           <option *ngFor="let o of ockovania">{{o.datum}}</option>
         </select>
       </div></td>
 
-      <td><button class="btn btn--action" (click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button>
+      <td><button class="btn btn--action" (click)="pridaj()" *ngIf="form.value.id === null"><span class="pridaj">Pridaj</span></button><br>
         <button class="btn btn--action" (click)="uprav()" *ngIf="form.value.id !== null" ><span class="uprav">Uprav</span></button><br>
         <button class="btn btn--action" (click)="zrus()"><span class="vymaz">Vymaž</span></button></td>
     </tr>
