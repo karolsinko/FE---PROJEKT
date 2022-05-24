@@ -1,15 +1,16 @@
 /* TABULKY
  --------------------------------------------
 */
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 table{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 td{
-  border: 0;
+  border:0;
   width: 150px;
-  color: white;
+
 }
 th{
   border:0;
@@ -107,7 +108,7 @@ button:active {
  --------------------------------------------
 */
 .wrapper {
-  width: 960px;
+  width: 900px;
   margin: 0 auto;
 }
 
@@ -150,15 +151,19 @@ section {
 header {
   padding: 20px 0;
 }
+/* VSTUP - INPUTY
+ --------------------------------------------
+*/
 
 
 .bi{
-  float: left;
+  float:left;
 }
-
 .group        {
   position:relative;
   margin-bottom:45px;
+  margin-left: 45px;
+
 }
 input         {
   font-size:18px;
@@ -249,3 +254,4 @@ input:focus ~ .highlight {
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
 }
+

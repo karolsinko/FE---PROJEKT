@@ -1,7 +1,12 @@
 import { Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {Ockovanie, OckovanieZoznam} from "../../models/ockovanie.model";
-import {OckovanieServiceService} from "../../ockovanie-service.service";
+
+import {ZoznamVakcin} from "../../models/vakcina.model";
+import {ZoznamOsob} from "../../models/osoba.model";
+import {OsobaServiceService} from "../../../Service/osoba-service.service";
+import {VakcinaServiceService} from "../../../Service/vakcina-service.service";
+import {OckovanostServiceService} from "../../../Service/ockovanost-service.service";
+import {Ockovanost, ZoznamOckovanosti} from "../../models/ockovanost.model";
 
 @Component({
   selector: 'app-ockovanost-stranka',
@@ -17,46 +22,74 @@ export class OckovanostStrankaComponent{
   ockovanieNaUpravu?: Ockovanie;
 
 
-  ngOnInit(): void {
-    this.refreshOckovanie();
-  }
+  constructor(private router: Router, private osobaService: OsobaServiceService, private vakcinaService: VakcinaServiceService, private ockovanostService: OckovanostServiceService) { }
 
-  refreshOckovanie(): void {
-    this.ockovanieService.getOckovania().subscribe(data => {
-      console.log('prislo:', data);
-      this.ockovania = data;
-    });
-  }
+  vakciny: ZoznamVakcin[] = [];
+  osoby: ZoznamOsob[] = [];
+  ockovania: Ockovanost[] = [];
+
+  ockovanostNaUpravu?: Ockovanost;
 
   chodSpat(): void {
     this.router.navigate(['']);
   }
 
-  pridaj(ockovanie: Ockovanie): void {
-    this.ockovanieService.createOckovanie(ockovanie).subscribe(data => {
-      this.refreshOckovanie();
+
+  obnovitOsoby(): void {
+    this.osobaService.getOsoby().subscribe(data => {
+      console.log('Prislo osoby: ', data);
+      this.osoby = data;
     });
   }
-  uprav(ockovanie: Ockovanie): void {
-    if (ockovanie.id !== undefined) {
-      this.ockovanieService.updateOckovanie(ockovanie.id, ockovanie).subscribe(data => {
-        this.refreshOckovanie();
+
+  obnovitVakciny(): void {
+    this.vakcinaService.getVakciny().subscribe(data => {
+      console.log('Prislo vakciny: ', data);
+      this.vakciny = data;
+    });
+  }
+
+  obnovitOckovanie(): void {
+    this.ockovanostService.getOckovanosti().subscribe(data => {
+      console.log('Prislo ockovania: ', data);
+      this.ockovania = data;
+    });
+  }
+
+  ngOnInit(): void {
+    this.obnovitOsoby();
+    this.obnovitVakciny();
+    this.obnovitOckovanie();
+  }
+
+  pridaj(ockovanost: Ockovanost): void {
+    this.ockovanostService.createOckovanost(ockovanost).subscribe(data => {
+      this.obnovitOckovanie();
+    });
+  }
+
+  uprav(ockovanost: Ockovanost): void {
+    if(ockovanost.id !== undefined){
+      this.ockovanostService.updateOckovanost(ockovanost.id, ockovanost).subscribe(data =>{
+        this.obnovitOckovanie();
       });
     }
   }
 
-  upravZoZoznamu(id: number): void {
-    this.ockovanieService.getOckovanie(id).subscribe(data => {
-      this.ockovanieNaUpravu = data;
+
+  upravZoZoznamu(ockovanostId: number): void {
+    this.ockovanostService.getOckovanost(ockovanostId).subscribe(data =>{
+      this.ockovanostNaUpravu = data;
     });
   }
 
-  zmazZoZoznamu(id: number): void {
-    this.ockovanieService.deleteOckovanie(id).subscribe(data => {
-      this.refreshOckovanie();
-    });
+  zmazZoZoznamu(ockovanostId: number): void {
+    if(confirm('Naozaj chces zmazat?')){
+      this.ockovanostService.deleteOckovanost(ockovanostId).subscribe(data =>{
+        this.obnovitOckovanie();
+      });
+    }
   }
-
 
 }
 

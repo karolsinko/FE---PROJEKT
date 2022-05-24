@@ -3,28 +3,28 @@
   <title></title>
 </head>
 <div class='dashboard-app'>
-<div class='dashboard-nav'>
-  <app-menu></app-menu>
+  <div class='dashboard-nav'>
+    <app-menu></app-menu>
 </div>
-<div class='dashboard-content'>
-  <div class='container'>
-    <div class='card'>
-      <div class='card-header'>
-        <i class="bi bi-person"></i><h1>Evidencia osoby</h1>
-  <button class="btn btn--action"(click)="chodSpat()"><span>Späť</span></button>
-      </div>
-<div class='card-body'>
-  <app-osoba-formular [osoba]= "osobaNaUpravu"
-                      (pridajOsobu)="pridaj($event)"
-                      (upravOsobu)="uprav($event)">
-  </app-osoba-formular>
+  <div class='dashboard-content'>
+    <div class='container'>
+      <div class='card'>
+        <div class='card-header'>
+          <i class="bi bi-person"></i><h1>Evidencia osoby</h1>
+            <button class="btn btn--action"(click)="chodSpat()"><span>Späť</span></button>
+        </div>
+        <div class='card-body'>
+          <app-osoba-formular [osoba]= "osobaNaUpravu"
+                            (pridajOsobu)="pridaj($event)"
+                            (upravOsobu)="uprav($event)">
+          </app-osoba-formular>
 
-  <app-osoba-zoznam [osoby]="osoby"
-                    (upravOsobu)="upravZoZoznamu($event)"
-                    (vymazOsobu)="zmazZoZoznamu($event)">
-  </app-osoba-zoznam>
+          <app-osoba-zoznam [osoby]="osoby"
+                          (upravOsobu)="upravZoZoznamu($event)"
+                          (vymazOsobu)="zmazZoZoznamu($event)">
+          </app-osoba-zoznam>
 
-</div>
+        </div>
     </div>
   </div>
 </div>

@@ -7,7 +7,6 @@ import {FormControl, FormGroup} from '@angular/forms';
   selector: 'app-osoba-formular',
   templateUrl: './osoba-formular.component.html',
   styleUrls: ['./osoba-formular.component.css']
-
 })
 export class OsobaFormularComponent {
 
@@ -30,9 +29,9 @@ export class OsobaFormularComponent {
       id: new FormControl(null),
       meno: new FormControl(null),
       priezvisko: new FormControl(null),
-      rok_nar: new FormControl(null),
-      rod_cislo: new FormControl(null),
-      tel_cislo: new FormControl(null),
+      rokNar: new FormControl(null),
+      rodCislo: new FormControl(null),
+      telCislo: new FormControl(null),
       bydlisko: new FormControl(null),
       pohlavie: new FormControl(null)
     });
@@ -42,9 +41,9 @@ export class OsobaFormularComponent {
     this.form.controls['id'].setValue(osoba.id);
     this.form.controls['meno'].setValue(osoba.meno);
     this.form.controls['priezvisko'].setValue(osoba.priezvisko);
-    this.form.controls['rok_nar'].setValue(osoba.rok_nar);
-    this.form.controls['rod_cislo'].setValue(osoba.rod_cislo);
-    this.form.controls['tel_cislo'].setValue(osoba.tel_cislo);
+    this.form.controls['rokNar'].setValue(osoba.rokNar);
+    this.form.controls['rodCislo'].setValue(osoba.rodCislo);
+    this.form.controls['telCislo'].setValue(osoba.telCislo);
     this.form.controls['bydlisko'].setValue(osoba.bydlisko);
     this.form.controls['pohlavie'].setValue(osoba.pohlavie);
   }

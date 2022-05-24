@@ -1,29 +1,36 @@
+
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {OckovanieZoznam} from "../../models/ockovanie.model";
+import {ZoznamOckovanosti} from "../../models/ockovanost.model";
+
 
 @Component({
   selector: 'app-ockovanost-zoznam',
   templateUrl: './ockovanost-zoznam.component.html',
   styleUrls: ['./ockovanost-zoznam.component.css']
 })
-export class OckovanostZoznamComponent{
+
+export class OckovanostZoznamComponent {
+
 
   @Input()
   ockovania: OckovanieZoznam[] = [];
 
-  @Output()
-  upravOckovanie: EventEmitter<number> = new EventEmitter<number>();
+
+  @Input()
+  ockovania: ZoznamOckovanosti[] = [];
 
   @Output()
-  vymazOckovanie: EventEmitter<number> = new EventEmitter<number>();
+  upravOckovanost: EventEmitter<number> = new EventEmitter<number>();
 
+  @Output()
+  vymazOckovanost: EventEmitter<number> = new EventEmitter<number>();
 
-  uprav(id: number): void {
-    this.upravOckovanie.emit(id);
+  uprav(ockovanostId?: number): void {
+    this.upravOckovanost.emit(ockovanostId);
   }
 
-  vymaz(id: number): void {
-    this.vymazOckovanie.emit(id);
+  zmaz(ockovanostId?: number): void {
+    this.vymazOckovanost.emit(ockovanostId);
   }
 
 }

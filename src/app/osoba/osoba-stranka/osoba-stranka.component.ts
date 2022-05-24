@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Osoba, ZoznamOsob} from '../../models/osoba.model';
-import {OsobaServiceService} from "../../../osoba-service.service";
+import {OsobaServiceService} from "../../../Service/osoba-service.service";
 
 @Component({
   templateUrl: './osoba-stranka.component.html',
@@ -39,7 +39,7 @@ export class OsobaStrankaComponent implements OnInit{
 
   uprav(osoba: Osoba): void {
     if(osoba.id !== undefined){
-      this.osobaService.updateOsoba(osoba.id, osoba).subscribe(data =>{
+      this.osobaService.updateOsoba(osoba.id, osoba).subscribe(() =>{
         this.obnovitOsoby();
       });
     }
@@ -53,7 +53,7 @@ export class OsobaStrankaComponent implements OnInit{
 
   zmazZoZoznamu(osobaId: number): void {
     if(confirm('Naozaj chces zmazat?')){
-      this.osobaService.deleteOsoba(osobaId).subscribe(data =>{
+      this.osobaService.deleteOsoba(osobaId).subscribe(() =>{
         this.obnovitOsoby();
       });
     }
