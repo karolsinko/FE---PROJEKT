@@ -9,7 +9,6 @@ import {ZoznamOckovanosti} from "../../models/ockovanost.model";
 })
 export class OckovanostZoznamComponent {
 
-  constructor() { }
   @Input()
   ockovania: ZoznamOckovanosti[] = [];
 
@@ -26,5 +25,6 @@ export class OckovanostZoznamComponent {
   zmaz(ockovanostId?: number): void {
     this.vymazOckovanost.emit(ockovanostId);
   }
+
 
 }

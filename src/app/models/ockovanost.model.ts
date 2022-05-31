@@ -21,7 +21,7 @@ export class ZoznamOckovanosti{
   id?: number;
   osobaId?: number;
   vakcinaId?: number;
-  datum: string;
+  datum: string
 
   constructor(ockovanost: ZoznamOckovanosti, osoba: Osoba, vakcina: Vakcina) {
     this.id = ockovanost.id;

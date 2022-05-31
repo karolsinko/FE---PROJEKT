@@ -4,12 +4,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 import {ZoznamVakcin} from "../../models/vakcina.model";
 import {ZoznamOsob} from "../../models/osoba.model";
 
+
 @Component({
   selector: 'app-ockovanost-formular',
   templateUrl:  './ockovanost-formular.component.html',
   styleUrls: ['./ockovanost-formular.component.css']
 })
 export class OckovanostFormularComponent{
+
+  datum: Date | undefined;
+
+  ngOnInit(){
+    this.datum = new Date();
+  }
 
   @Input()
   vakciny: ZoznamVakcin[] = [];
@@ -37,7 +44,7 @@ export class OckovanostFormularComponent{
       id: new FormControl(null),
       osobaId: new FormControl(null),
       vakcinaId: new FormControl(null),
-      datum: new FormControl(null)
+      datum: new FormControl(null),
     });
   }
 
@@ -62,4 +69,5 @@ export class OckovanostFormularComponent{
     this.ockovanost = undefined;
     this.form.reset();
   }
+
 }
